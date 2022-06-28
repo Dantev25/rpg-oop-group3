@@ -1,7 +1,5 @@
 package main;
 
-import java.util.GregorianCalendar;
-
 import entity.Entity;
 
 public class CollisionChecker {
