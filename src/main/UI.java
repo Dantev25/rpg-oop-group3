@@ -62,17 +62,30 @@ public class UI {
 		}
 	}
 	public void drawTitleScreen() {
-	
+		
+		
+		// BACKGROUND COLOR
+		g2.setColor(new Color(0,0,0));
+		g2.fillRect(0, 0,  gp.screenWidth, gp.screenHeight);
+		
 		
 		// TITLE NAME
 		g2.setFont(g2.getFont().deriveFont(Font.PLAIN,96F));
-		String text =  "The Blue Warrior";
+		String text =  "RPG Group 1";
 		int x = getXforCenteredText(text);
 		int y = gp.tileSize*3;
 		
+		// TITLE SHADOW
+		g2.setColor(Color.gray);
+		g2.drawString(text, x+5, y+5);
+		// MAIN COLOR
 		g2.setColor(Color.white);
 		g2.drawString(text, x, y);
 		
+		// PLAYER IMAGE
+		x = gp.screenWidth/2 - (gp.tileSize*2)/2;
+		y = gp.tileSize*5;
+		g2.drawImage(gp.player.down1, x, y, gp.tileSize*2, gp.tileSize*2, null);
 	}
 
 	public void drawPauseScreen() {
