@@ -43,6 +43,11 @@ public class UI {
 		g2.setFont(arial_40);
 		g2.setColor(Color.white);
 		
+		//TITLE STATE
+		if(gp.gameState == gp.titleState) {
+			drawTitleScreen();
+		}
+		
 		//PLAYING GAME
 		if(gp.gameState == gp.playState) {
 			// Do playState stuffs later
@@ -55,6 +60,19 @@ public class UI {
 		if(gp.gameState == gp.dialogueState) {
 			drawDialogueScreen();
 		}
+	}
+	public void drawTitleScreen() {
+	
+		
+		// TITLE NAME
+		g2.setFont(g2.getFont().deriveFont(Font.PLAIN,96F));
+		String text =  "The Blue Warrior";
+		int x = getXforCenteredText(text);
+		int y = gp.tileSize*3;
+		
+		g2.setColor(Color.white);
+		g2.drawString(text, x, y);
+		
 	}
 
 	public void drawPauseScreen() {
