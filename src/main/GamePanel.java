@@ -128,7 +128,20 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
+<<<<<<< Updated upstream
 		// TILE
+=======
+		
+		//DEBUG
+		long drawStart = 0;
+		if (keyH.checkDrawTime == true) {
+			drawStart = System.nanoTime();
+		}
+		
+		
+		
+		
+>>>>>>> Stashed changes
 		tileM.draw(g2);
 		
 		for(int i = 0; i < obj.length; i++) {
@@ -139,9 +152,22 @@ public class GamePanel extends JPanel implements Runnable{
 		// PLAYER
 		player.draw(g2);
 		
+<<<<<<< Updated upstream
 		//UI
 		ui.draw(g2);
 		
+=======
+		//DEBUG
+		if (keyH.checkDrawTime == true) {
+			long drawEnd = System.nanoTime();
+			long passed = drawEnd - drawStart;
+			
+			g2.setColor(Color.white);
+			g2.drawString("Drawtime: " + passed, 10 , 400);
+			System.out.println("Drawtime: " + passed);
+			
+		}
+>>>>>>> Stashed changes
 		
 		g2.dispose();
 		
