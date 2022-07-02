@@ -29,6 +29,7 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int worldWidth = tileSize * maxWorldCol;
 	public final int worldHeight = tileSize * maxWorldRow;
 	
+	
 	//FPS
 	int FPS = 60;
 	
@@ -74,7 +75,6 @@ public class GamePanel extends JPanel implements Runnable{
 		aSetter.setObject();
 		
 		playMusic(0);
-		stopMusic();
 		gameState = playState;
 		
 	}
@@ -129,10 +129,11 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		if(gameState == playState) {
 		player.update();
+		
 	
 	}
 		if(gameState == pauseState) {
-			//nothing
+			stopMusic();
 		}
 	}
 	public void paintComponent(Graphics g) {
