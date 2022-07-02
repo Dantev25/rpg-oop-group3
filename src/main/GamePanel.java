@@ -33,7 +33,7 @@ public class GamePanel extends JPanel implements Runnable{
 	int FPS = 60;
 	
 	//SYSTEM
-	TileManager tileM= new TileManager(this);
+	TileManager tileM = new TileManager(this);
 	
 	KeyHandler keyH = new KeyHandler();
 	
@@ -128,9 +128,7 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
-<<<<<<< Updated upstream
-		// TILE
-=======
+
 		
 		//DEBUG
 		long drawStart = 0;
@@ -140,8 +138,7 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		
 		
-		
->>>>>>> Stashed changes
+
 		tileM.draw(g2);
 		
 		for(int i = 0; i < obj.length; i++) {
@@ -152,11 +149,11 @@ public class GamePanel extends JPanel implements Runnable{
 		// PLAYER
 		player.draw(g2);
 		
-<<<<<<< Updated upstream
+
 		//UI
 		ui.draw(g2);
 		
-=======
+
 		//DEBUG
 		if (keyH.checkDrawTime == true) {
 			long drawEnd = System.nanoTime();
@@ -167,7 +164,6 @@ public class GamePanel extends JPanel implements Runnable{
 			System.out.println("Drawtime: " + passed);
 			
 		}
->>>>>>> Stashed changes
 		
 		g2.dispose();
 		

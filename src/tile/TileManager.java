@@ -69,7 +69,7 @@ public class TileManager {
 	public void getTileImage() {
 		
 			
-		setup(0,"grass",false);
+		setup(0,"grass00",false);
 			
 		setup(1,"wall",true);
 			
