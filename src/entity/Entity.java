@@ -25,6 +25,10 @@ public class Entity {
 	public int actionLockCounter = 0;
 	int dialogueIndex = 0;
 	
+	//CHARACTER STATUS
+	public int maxLife;
+	public int life;
+	
 	String dialogues[] = new String[20];
 	
 	
