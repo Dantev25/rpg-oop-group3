@@ -5,13 +5,19 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 
+<<<<<<< HEAD
+=======
+import object.OBJ_Heart;
+import object.OBJ_Key;
+import object.SuperObject;
+>>>>>>> 5e48f905d54069c9be9c678e165eb730b64a1535
 
 public class UI {
 	
 	GamePanel gp;
 	Graphics2D g2;
 	Font arial_40, arial_80B;
-
+	BufferedImage heart_full, heart_half, heart_blank;
 	public boolean messageOn = false;
 	public String message = "";
 	int messageCounter = 0;
@@ -27,6 +33,12 @@ public class UI {
 		
 		arial_40 = new Font("Arial", Font.PLAIN, 40);
 		arial_80B = new Font("Arial", Font.BOLD, 80);
+		
+		//CREATE HUD OBJECT
+		SuperObject heart = new OBJ_Heart(gp);
+		heart_full = heart.image;
+		heart_half = heart.image2;
+		heart_blank = heart.image3;
 
 		
 	}
@@ -50,14 +62,16 @@ public class UI {
 		
 		//PLAYING GAME
 		if(gp.gameState == gp.playState) {
-			// Do playState stuffs later
+			drawPlayerLife();
 		}
 		//PAUSE GAME
 		if(gp.gameState == gp.pauseState) {
+			drawPlayerLife();
 			drawPauseScreen();
 		}
 		//DIALOGUE STATE
 		if(gp.gameState == gp.dialogueState) {
+			drawPlayerLife();
 			drawDialogueScreen();
 		}
 	}
@@ -164,6 +178,34 @@ public class UI {
 		
 	}
 
+	public void drawPlayerLife() {
+		int x = gp.tileSize/2;
+		int y = gp.tileSize/2;
+		int i = 0;
+		
+		//DRAW MAX LIFE
+		while (i < gp.player.maxLife/2) {
+			g2.drawImage(heart_blank, x, y,null);
+			i++;
+			x += gp.tileSize;
+		}
+		
+		//RESET 
+		x = gp.tileSize/2;
+		y = gp.tileSize/2;
+		i = 0;
+		
+		//DRAW CURRENT LIFE
+		while(i < gp.player.life) {
+			g2.drawImage(heart_half, x, y, null);
+			i++;
+			if(i < gp.player.life) {
+				g2.drawImage(heart_full, x, y, null);
+			}
+			i++;
+			x += gp.tileSize;
+		}
+	}
 	public void drawPauseScreen() {
 		
 		g2.setFont(g2.getFont().deriveFont(Font.PLAIN,80F));
