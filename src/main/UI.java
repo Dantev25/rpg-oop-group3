@@ -82,9 +82,9 @@ public class UI {
 		g2.setColor(Color.white);
 		g2.drawString(text, x, y);
 		
-		// PLAYER IMAGE
+		//SET PLAYER IMAGE
 		x = gp.screenWidth/2 - (gp.tileSize*2)/2;
-		y = gp.tileSize*5;
+		y = gp.tileSize*6;
 		g2.drawImage(gp.player.down1, x, y, gp.tileSize*2, gp.tileSize*2, null);
 	}
 
