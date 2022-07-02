@@ -12,6 +12,7 @@ public class NPC_Oldman extends Entity{
 		speed = 1;
 		
 		getImage();
+		setDialogue();
 	}
 	
 	public void getImage() {
@@ -24,6 +25,16 @@ public class NPC_Oldman extends Entity{
 		right2 = setup("/npc/oldman_right_2");
 		left1 = setup("/npc/oldman_left_1");
 		left2 = setup("/npc/oldman_left_2");
+	}
+	
+	public void setDialogue() {
+		
+		dialogues[0] = "Hello boy. ";
+		dialogues[1] = "So, You've come to this island \nto find treasure?";
+		dialogues[2] = "I used to be a great wizard \nbut now...\nI'm a bit too old for adventuring";
+		dialogues[3] = "Well then, goodluck to you!";
+		
+		
 	}
 	
 	public void setAction() {
@@ -51,4 +62,20 @@ public class NPC_Oldman extends Entity{
 		}
 		
 	}
+	
+	public void speak() {
+		
+		super.speak();
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
