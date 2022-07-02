@@ -26,6 +26,17 @@ public class KeyHandler implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		
 		int code = e.getKeyCode();
+		
+		// TITLE STATE
+		if(gp.gameState == gp.titleState) {
+			
+			if(code == KeyEvent.VK_W) {
+				gp.ui.commandNum--;
+			}
+			if(code == KeyEvent.VK_S) {
+				gp.ui.commandNum++;
+			}
+		}
 		//PLAYSTATE
 		if(gp.gameState == gp.playState) {
 			if(code == KeyEvent.VK_W) {
@@ -35,7 +46,7 @@ public class KeyHandler implements KeyListener{
 			if(code == KeyEvent.VK_S) {
 				downPressed = true;
 				
-			}
+    		}
 			
 			if(code == KeyEvent.VK_A) {
 				leftPressed = true;

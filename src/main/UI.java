@@ -4,10 +4,7 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.text.DecimalFormat;
 
-import object.OBJ_Key;
 
 public class UI {
 	
@@ -20,6 +17,7 @@ public class UI {
 	int messageCounter = 0;
 	public boolean gameFinished = false;
 	public String currentDialogue = "";
+	public int commandNum = 0; 
 
 	
 	public UI(GamePanel gp) {
@@ -95,16 +93,25 @@ public class UI {
 		x = getXforCenteredText(text);
 		y += gp.tileSize*3.5;
 		g2.drawString(text, x, y);
+		if(commandNum == 0) {
+			g2.drawString(">", x-gp.tileSize, y);		
+		}
 		
 		text = "LOAD GAME";
 		x = getXforCenteredText(text);
 		y += gp.tileSize*1;
 		g2.drawString(text, x, y);
+		if(commandNum == 1) {
+			g2.drawString(">", x-gp.tileSize, y);		
+		}
 		
 		text = "QUIT";
 		x = getXforCenteredText(text);
 		y += gp.tileSize*1;
 		g2.drawString(text, x, y);
+		if(commandNum == 2) {
+			g2.drawString(">", x-gp.tileSize, y);		
+		}
 		
 	}
 
