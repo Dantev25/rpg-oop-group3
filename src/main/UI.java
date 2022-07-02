@@ -4,13 +4,11 @@ import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
 
-<<<<<<< HEAD
-=======
 import object.OBJ_Heart;
-import object.OBJ_Key;
 import object.SuperObject;
->>>>>>> 5e48f905d54069c9be9c678e165eb730b64a1535
+
 
 public class UI {
 	
