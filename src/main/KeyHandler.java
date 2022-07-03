@@ -30,6 +30,30 @@ public class KeyHandler implements KeyListener{
 		// TITLE STATE
 		if(gp.gameState == gp.titleState) {
 			
+			titleState(code);
+			
+		}
+			
+		//PLAYSTATE
+	    else if(gp.gameState == gp.playState) {
+			playState(code);
+		}
+		//PAUSESTATE
+		else if (gp.gameState == gp.pauseState) {
+			pauseState(code);
+		}
+		//DIALOGSTATE
+		else if (gp.gameState == gp.dialogueState) {
+			dialogueState(code);
+		}
+		// CHARACTERSTATE
+		else if (gp.gameState == gp.characterState) {
+			characterState(code);
+		}
+	}
+		
+		public void titleState(int code) {
+			
 			if(gp.ui.titleScreenState == 0) {
 				
 				if(code == KeyEvent.VK_W) {
@@ -58,9 +82,8 @@ public class KeyHandler implements KeyListener{
 					}
 				
 			}
-			
 		}
-			else if(gp.ui.titleScreenState == 1) {
+		else if(gp.ui.titleScreenState == 1) {
 				
 				if(code == KeyEvent.VK_W) {
 					gp.ui.commandNum--;
@@ -96,13 +119,13 @@ public class KeyHandler implements KeyListener{
 						gp.ui.titleScreenState = 0;
 					}
 				
+				}
+			
 			}
 			
-		}
-			
 	}
-		//PLAYSTATE
-		else if(gp.gameState == gp.playState) {
+		public void playState(int code) {
+			
 			if(code == KeyEvent.VK_W) {
 				upPressed = true;
 			}
@@ -126,6 +149,10 @@ public class KeyHandler implements KeyListener{
 				gp.stopMusic();
 			
 			}
+			if(code == KeyEvent.VK_C) {
+				gp.gameState = gp.characterState;
+				
+			}
 			if(code == KeyEvent.VK_ENTER) {
 				enterPressed = true;
 				
@@ -143,10 +170,8 @@ public class KeyHandler implements KeyListener{
 			}
 		}
 		
-		
-		//PAUSESTATE
-		
-		else if (gp.gameState == gp.pauseState) {
+		public void pauseState(int code) {
+			
 			if(code == KeyEvent.VK_P) {
 				gp.gameState = gp.playState;
 				gp.playMusic(0);
@@ -154,15 +179,19 @@ public class KeyHandler implements KeyListener{
 			}
 		}
 		
-		//DIALOGSTATE
-		
-		else if (gp.gameState == gp.dialogueState) {
+		public void dialogueState(int code) {
+			
 			if(code == KeyEvent.VK_ENTER) {
 				gp.gameState = gp.playState;
 			}
 		}
-
-}
+		
+		public void characterState(int code) {
+			
+			if(code == KeyEvent.VK_C) {
+				gp.gameState = gp.playState;
+			}
+		}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -187,5 +216,7 @@ public class KeyHandler implements KeyListener{
 		}
 	}
 	
-	
 }
+	
+	
+
