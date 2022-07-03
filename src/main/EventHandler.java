@@ -97,6 +97,7 @@ public class EventHandler {
 			gp.playSE(2);
 			gp.ui.currentDialogue = "You drunk water. \nYou are healed!";
 			gp.player.life = gp.player.maxLife;
+			gp.aSetter.setMonster();
 		}
 	}
 }

@@ -101,17 +101,17 @@ public class KeyHandler implements KeyListener{
 				}
 				if(code == KeyEvent.VK_ENTER) {
 					if(gp.ui.commandNum == 0) {
-						System.out.println("Do some fighter specific stuff");
+//						System.out.println("Do some fighter specific stuff");
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
 					if(gp.ui.commandNum == 1) {
-						System.out.println("Do some thief specific stuff");
+//						System.out.println("Do some thief specific stuff");
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
 					if(gp.ui.commandNum == 2) {
-						System.out.println("Do some sorcerer specific stuff");
+//						System.out.println("Do some sorcerer specific stuff");
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
