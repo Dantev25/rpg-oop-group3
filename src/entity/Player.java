@@ -193,7 +193,7 @@ public class Player extends Entity{
 			case "up": worldY -= attackArea.height; break;
 			case "down": worldY += attackArea.height; break;
 			case "left": worldX -= attackArea.width; break;
-			case "right": worldY += attackArea.width; break;
+			case "right": worldX += attackArea.width; break;
 			}
 			// attackArea becomes solidArea
 			solidArea.width = attackArea.width;
@@ -264,6 +264,7 @@ public class Player extends Entity{
 				gp.playSE(5);
 				gp.monster[i].life -= 1;
 				gp.monster[i].invincible = true;
+				gp.monster[i].damageReaction();
 				
 				if(gp.monster[i].life <= 0) {
 					gp.monster[i].dying = true;
