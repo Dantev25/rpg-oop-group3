@@ -6,8 +6,11 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
 import main.GamePanel;
 import main.KeyHandler;
+import object.OBJ_Key;
 import object.OBJ_Shield_Wood;
 import object.OBJ_Sword_Normal;
 
@@ -19,6 +22,8 @@ public class Player extends Entity{
 	public final int screenX;
 	public final int screenY;
 	public boolean attackCanceled = false;
+	public ArrayList<Entity> inventory = new ArrayList<>();
+	public final int maxInventorySize = 20;
 
 
 	public Player(GamePanel gp, KeyHandler keyH) {
@@ -44,6 +49,7 @@ public class Player extends Entity{
 		setDefaultValues();
 		getPlayerImage();
 		getAttackImage();
+		setItems();
 		
 	}
 	
@@ -68,7 +74,13 @@ public class Player extends Entity{
 		attack = getAttack();
 		defense = getDefense();
 
-		}
+	}
+	
+	public void setItems() {
+		inventory.add(currentWeapon);
+		inventory.add(currentShield);
+		inventory.add(new OBJ_Key(gp));
+	}
 	
 	public int getAttack() {
 		return attack = strength * currentWeapon.attackValue;
