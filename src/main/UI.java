@@ -89,7 +89,7 @@ public class UI {
 		
 		if(titleScreenState == 0) {
 			
-		
+			
 			// BACKGROUND COLOR
 			g2.setColor(new Color(0,0,0));
 			g2.fillRect(0, 0,  gp.screenWidth, gp.screenHeight);
@@ -142,6 +142,8 @@ public class UI {
 			}
 		}
 		else if(titleScreenState == 1) {
+			g2.setColor(new Color(0,0,0));
+			g2.fillRect(0, 0,  gp.screenWidth, gp.screenHeight);
 			
 			// CLASS SELECTION SCREEN
 			g2.setColor(Color.white);
