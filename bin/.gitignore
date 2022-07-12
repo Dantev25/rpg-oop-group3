@@ -1,6 +1,10 @@
-/pack/
-/tiles_interactives/
-/tile_interactive/
-/drytree.class
 /entity/
 /main/
+<<<<<<< HEAD
+/monster/
+/object/
+/tile/
+=======
+/tile/
+/tile_interactive/
+>>>>>>> 61baba019490b4d9e61783bec72b946c5dc2a1cb
