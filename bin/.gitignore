@@ -1,6 +1,4 @@
-/monster/
-/entity/
-/object/
-/main/
-/maps/
-/projectile/
+/pack/
+/tiles_interactives/
+/tile_interactive/
+/drytree.class
