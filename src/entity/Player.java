@@ -57,8 +57,8 @@ public class Player extends Entity{
 	
 	public void setDefaultValues() {
 		
-		worldX = gp.tileSize * 20;
-		worldY = gp.tileSize * 29;
+		worldX = gp.tileSize * 23;
+		worldY = gp.tileSize * 21;
 		speed = 4;		
 		direction = "down";
 		
@@ -87,7 +87,7 @@ public class Player extends Entity{
 		if (i == 0) {
 			ptype = 0;
 			level = 1;
-			maxLife = 6;
+			maxLife = 1;
 			life = maxLife;
 			maxMana = 1;
 			mana = maxMana;
@@ -436,8 +436,10 @@ public class Player extends Entity{
 		}
 		
 		if(life <= 0) {
+			gp.ui.titleScreenState = 0;
 			gp.gameState = gp.gameOverState;
 			gp.playSE(12);
+			gp.stopMusic();
 		}
 		
 	}
