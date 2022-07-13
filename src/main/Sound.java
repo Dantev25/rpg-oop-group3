@@ -6,7 +6,11 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
-
+/**
+ * This implements the sounds of the added audio files.
+ * @author mrish
+ *
+ */
 public class Sound {
 	
 	Clip clip;
@@ -15,7 +19,9 @@ public class Sound {
 	int volumeScale = 3;
 	float volume;
 	
-	
+	/**
+	 * This constructs the audio file format objects.
+	 */
 	public Sound() {
 		
 		soundURL[0] = getClass().getResource("/sound/BlueBoyAdventure.wav");
@@ -31,7 +37,11 @@ public class Sound {
 		soundURL[10] = getClass().getResource("/sound/burning.wav");
 		soundURL[11] = getClass().getResource("/sound/cuttree.wav");
 	}
-	
+	/**
+	 * This opens the audio file. 
+	 * It obtains an audio input stream from the URL provided.
+	 * @param i the number of the soundURL being constructed.
+	 */
 	public void setFile(int i) {
 			try {
 				AudioInputStream ais = AudioSystem.getAudioInputStream(soundURL[i]);
@@ -46,21 +56,32 @@ public class Sound {
 			}
 			
 	}
+	/**
+	 * This plays the sound file.
+	 */
 	public void play() {
 			
 		clip.start();
 		
 	}
+	/**
+	 * This loops the sound file.
+	 */
 	public void loop() {
 		
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 	}
-	
+	/**
+	 * This stops the sound file.
+	 */
 	public void stop() {
 		
 		clip.stop();
 	}
 	
+	/**
+	 * This checks and sets the sound volume.
+	 */
 	public void checkVolume() {
 		
 		switch(volumeScale) {
