@@ -10,8 +10,10 @@ import java.util.ArrayList;
 
 import main.GamePanel;
 import main.KeyHandler;
+import object.OBJ_Axe;
 import object.OBJ_Fireball;
 import object.OBJ_Key;
+import object.OBJ_NoWep;
 import object.OBJ_Rock;
 import object.OBJ_Shield_Wood;
 import object.OBJ_Sword_Normal;
@@ -52,7 +54,6 @@ public class Player extends Entity{
 		setDefaultValues();
 		getPlayerImage();
 		getAttackImage();
-		setItems();
 		
 	}
 	
@@ -75,15 +76,79 @@ public class Player extends Entity{
 		exp = 0;
 		nextLevelExp = 10;
 		coin =0;
-		currentWeapon = new OBJ_Sword_Normal(gp);
+		currentWeapon = new OBJ_NoWep(gp);
 		currentShield = new OBJ_Shield_Wood(gp);
-		projectile = new OBJ_Fireball(gp);
-//		projectile = new OBJ_Rock(gp);
+
+
 		attack = getAttack();
 		defense = getDefense();
+		
 
 	}
-	
+	public void updateDefaultValues(int i) {
+		if (i == 0) {
+			level = 1;
+			maxLife = 6;
+			life = maxLife;
+			maxMana = 1;
+			mana = maxMana;
+			ammo = 10;
+			strength = 5;
+			dexterity = 1;
+			exp = 0;
+			nextLevelExp = 10;
+			coin =0;
+			currentWeapon = new OBJ_Sword_Normal(gp);
+			projectile = new OBJ_Fireball(gp);
+			attack = getAttack();
+			defense = getDefense();
+			getPlayerImage();
+			getAttackImage();
+			setItems();
+		}
+		else if(i == 1) {
+			level = 1;
+			maxLife = 10;
+			life = maxLife;
+			maxMana = 0;
+			mana = maxMana;
+			ammo = 10;
+			strength = 5;
+			dexterity = 1;
+			exp = 0;
+			nextLevelExp = 10;
+			coin =0;
+			currentWeapon = new OBJ_Axe(gp);
+			currentShield = new OBJ_Shield_Wood(gp);
+			
+			projectile = new OBJ_Fireball(gp);
+			attack = getAttack();
+			defense = getDefense();
+			getPlayerImage();
+			getAttackImage();
+			setItems();
+		}
+		else if(i == 2) {
+			level = 1;
+			maxLife = 6;
+			life = maxLife;
+			maxMana = 4;
+			mana = maxMana;
+			ammo = 10;
+			strength = 5;
+			dexterity = 1;
+			exp = 0;
+			nextLevelExp = 10;
+			coin =0;
+			currentShield = new OBJ_Shield_Wood(gp);
+			projectile = new OBJ_Fireball(gp);
+			attack = getAttack();
+			defense = getDefense();
+			getPlayerImage();
+			getAttackImage();
+			setItems();
+		}
+	}
 	public void setItems() {
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
@@ -110,7 +175,16 @@ public class Player extends Entity{
 	}
 	
 	public void getAttackImage() {
-		
+		if(currentWeapon.type == type_nowep){
+			attackUp1 = setup("/player/boy_up_1", gp.tileSize, gp.tileSize); 
+			attackUp2 = setup("/player/boy_up_2", gp.tileSize, gp.tileSize);
+			attackDown1 = setup("/player/boy_down_1", gp.tileSize, gp.tileSize);
+			attackDown2 = setup("/player/boy_down_2", gp.tileSize, gp.tileSize);
+			attackRight1 = setup("/player/boy_right_1", gp.tileSize, gp.tileSize);
+			attackRight2 = setup("/player/boy_right_2", gp.tileSize, gp.tileSize);
+			attackLeft1 = setup("/player/boy_left_1", gp.tileSize, gp.tileSize);
+			attackLeft2 = setup("/player/boy_left_2", gp.tileSize, gp.tileSize);
+		}
 		if(currentWeapon.type == type_sword) {
 			attackUp1 = setup("/player/boy_attack_up_1", gp.tileSize, gp.tileSize*2); 
 			attackUp2 = setup("/player/boy_attack_up_2", gp.tileSize, gp.tileSize*2);
@@ -485,8 +559,12 @@ public class Player extends Entity{
 				if (spriteNum == 1) {image = up1;}
 				if (spriteNum == 2) {image = up2;}
 			}
-			if(attacking == true) {
+			if(attacking == true && currentWeapon.type != type_nowep) {
 				tempScreenY = screenY - gp.tileSize;
+				if (spriteNum == 1) {image = attackUp1;}
+				if (spriteNum == 2) {image = attackUp2;}
+			}
+			else if(attacking == true && currentWeapon.type == type_nowep) {
 				if (spriteNum == 1) {image = attackUp1;}
 				if (spriteNum == 2) {image = attackUp2;}
 			}
@@ -506,8 +584,12 @@ public class Player extends Entity{
 				if (spriteNum == 1) {image = left1;}
 				if (spriteNum == 2) {image = left2;}
 			}
-			if(attacking == true) {
+			if(attacking == true && currentWeapon.type != type_nowep) {
 				tempScreenX = screenX - gp.tileSize;
+				if (spriteNum == 1) {image = attackLeft1;}
+				if (spriteNum == 2) {image = attackLeft2;}
+			}
+			else if (attacking == true && currentWeapon.type == type_nowep){
 				if (spriteNum == 1) {image = attackLeft1;}
 				if (spriteNum == 2) {image = attackLeft2;}
 			}

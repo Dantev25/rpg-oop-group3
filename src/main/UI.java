@@ -160,7 +160,7 @@ public class UI {
 			g2.drawString(text, x, y);
 	
 			
-			text = "Fighter";
+			text = "Warrior";
 			x = getXforCenteredText(text);
 			y = gp.tileSize*5;
 			g2.drawString(text, x, y);
@@ -168,7 +168,7 @@ public class UI {
 				g2.drawString(">", x-gp.tileSize, y);
 			}
 			
-			text = "Thief";
+			text = "Tank";
 			x = getXforCenteredText(text);
 			y = gp.tileSize*6;
 			g2.drawString(text, x, y);

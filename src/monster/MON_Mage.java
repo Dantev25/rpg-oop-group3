@@ -7,7 +7,6 @@ import object.OBJ_Coin_Bronze;
 import object.OBJ_Fireball;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
-import object.OBJ_Rock;
 
 public class MON_Mage extends Entity{
 	GamePanel gp;
