@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import main.GamePanel;
 import main.KeyHandler;
+import monster.MON_GreenSlime;
 import object.OBJ_Axe;
 import object.OBJ_Fireball;
 import object.OBJ_Key;
@@ -57,8 +58,8 @@ public class Player extends Entity{
 	
 	public void setDefaultValues() {
 		
-		worldX = gp.tileSize * 23;
-		worldY = gp.tileSize * 21;
+		worldX = gp.tileSize * 29;
+		worldY = gp.tileSize * 23;
 		speed = 4;		
 		direction = "down";
 		
@@ -87,12 +88,12 @@ public class Player extends Entity{
 		if (i == 0) {
 			ptype = 0;
 			level = 1;
-			maxLife = 1;
+			maxLife = 8;
 			life = maxLife;
 			maxMana = 1;
 			mana = maxMana;
 			ammo = 10;
-			strength = 5;
+			strength = 3;
 			dexterity = 1;
 			exp = 0;
 			nextLevelExp = 10;
@@ -113,8 +114,8 @@ public class Player extends Entity{
 			maxMana = 0;
 			mana = maxMana;
 			ammo = 10;
-			strength = 5;
-			dexterity = 1;
+			strength = 1;
+			dexterity = 3;
 			exp = 0;
 			nextLevelExp = 10;
 			coin =0;
@@ -133,11 +134,11 @@ public class Player extends Entity{
 			level = 1;
 			maxLife = 6;
 			life = maxLife;
-			maxMana = 4;
+			maxMana = 10;
 			mana = maxMana;
-			ammo = 10;
-			strength = 5;
-			dexterity = 1;
+			ammo = 100;
+			strength = 0;
+			dexterity = 2;
 			exp = 0;
 			nextLevelExp = 10;
 			coin =0;
@@ -166,7 +167,9 @@ public class Player extends Entity{
  	public void setItems() {
  		inventory.clear();
 		inventory.add(currentWeapon);
-		inventory.add(currentShield);
+		if(ptype!=2) {
+			inventory.add(currentShield);
+		}
 		inventory.add(new OBJ_Key(gp));
 	}
 	
@@ -178,7 +181,7 @@ public class Player extends Entity{
 	
 	public int getAttack() {
 		attackArea = currentWeapon.attackArea;
-		return attack = strength * currentWeapon.attackValue;
+		return attack = strength + currentWeapon.attackValue;
 	}
 	
 	/**
@@ -188,7 +191,7 @@ public class Player extends Entity{
 	 */
 	
 	public int getDefense() {
-		return defense = dexterity * currentShield.defenseValue;
+		return defense = dexterity + currentShield.defenseValue;
 	}
 	public void getPlayerImage() {
 		if(ptype == 0) {
@@ -608,15 +611,34 @@ public class Player extends Entity{
 	public void checkLevelUp() {
 		
 		if(exp >= nextLevelExp) {
-			
 			level++;
-			nextLevelExp = nextLevelExp * 2;
-			maxLife +=2;
-			strength++;
-			dexterity++;
-			life = maxLife;
-			attack = getAttack();
-			defense = getDefense();
+			nextLevelExp = nextLevelExp + (10*level);
+			for (int i = 0; i<gp.monster.length;i++) {
+				gp.monster[i].attack += 1;
+			}
+			if(ptype == 0) {
+				maxLife +=2;
+				strength++;
+				dexterity++;
+				life = maxLife;
+				attack = getAttack();
+				defense = getDefense();
+			}
+			if(ptype == 1) {
+				maxLife +=2;
+				strength++;
+				dexterity++;
+				life = maxLife;
+				attack = getAttack();
+				defense = getDefense();	
+			}
+			if(ptype == 2) {
+				maxLife +=2;
+				dexterity++;
+				life = maxLife;
+				projectile.attack += 1;
+				defense = getDefense();
+			}
 			
 			gp.playSE(8);
 			gp.gameState = gp.dialogueState;

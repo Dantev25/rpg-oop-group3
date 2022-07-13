@@ -23,7 +23,7 @@ public class MON_Mage extends Entity{
 		type = type_monster;
 		name = "Mage";
 		speed = 2;
-		maxLife = 100;
+		maxLife = 12;
 		life = maxLife;
 		attack = 8;
 		defense = 0;
