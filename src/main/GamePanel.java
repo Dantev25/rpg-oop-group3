@@ -20,6 +20,8 @@ import tile_interactive.*;
  * This class implements the game screen.
  * This class inherits the Jpanel Class.
  * @author mrish
+ * @author Oomar
+ * @author Sadiyah
  *
  */
 public class GamePanel extends JPanel implements Runnable{

@@ -1,5 +1,11 @@
 package main;
-
+/**
+ * handles events such as healing points, and damage traps
+ * @author mrish
+ * @author Oomar
+ * @author Sadiyah
+ *
+ */
 public class EventHandler {
 	
 	GamePanel gp;
@@ -7,7 +13,10 @@ public class EventHandler {
 	
 	int previousEventX, previousEventY;
 	boolean canTouchEvent = true;
-	
+	/**
+	 * constructor for EventHandler
+	 * @param gp - gamepanel object
+	 */
 	public EventHandler(GamePanel gp) {
 		this.gp = gp;
 		
@@ -35,7 +44,9 @@ public class EventHandler {
 		
 		
 	}
-	
+	/**
+	 * checks whether the player has encountered an event
+	 */
 	public void checkEvent() {
 		
 		// Check if the player character is more than one tile away from the last event
@@ -48,11 +59,17 @@ public class EventHandler {
 		if(canTouchEvent == true) {
 			if(hit(27,16,"right") == true) {damagePit(27,16,gp.dialogueState);}
 			if(hit(23,19,"any") == true) {damagePit(23,19,gp.dialogueState);}
-			if(hit(23,12,"up") == true) {healingPool(23,12,gp.dialogueState);}
+			if(hit(28,12,"up") == true) {healingPool(28,12,gp.dialogueState);}
 		}
 		
 	}
-	
+	/**
+	 * checks whether the player is making contact with the event
+	 * @param col column location of the event
+	 * @param row row location of the event
+	 * @param reqDirection required direction to set off the event
+	 * @return
+	 */
 	public boolean hit(int col, int row, String reqDirection) {
 		
 		boolean hit = false;
@@ -78,7 +95,12 @@ public class EventHandler {
 		
 		return hit;
 	}
-	
+	/**
+	 * trap to deal damage
+	 * @param col column location of the event
+	 * @param row row location of the event
+	 * @param gameState game state
+	 */
 	public void damagePit(int col, int row, int gameState) {
 		gp.gameState = gameState;
 		gp.playSE(6);
@@ -88,14 +110,19 @@ public class EventHandler {
 		canTouchEvent = false;
 		
 	}
-	
+	/**
+	 * event to heal and give max mana
+	 * @param col column location of the event
+	 * @param row row location of the event
+	 * @param gameState game state
+	 */
 	public void healingPool(int col, int row, int gameState) {
 		
 		if(gp.keyH.enterPressed == true) {
 			gp.gameState = gameState;
 			gp.player.attackCanceled = true;
 			gp.playSE(2);
-			gp.ui.currentDialogue = "You drunk water. \nYour life and mana have been recorvered.";
+			gp.ui.currentDialogue = "You drunk water. \nYour life and mana have been recovered.";
 			gp.player.life = gp.player.maxLife;
 			gp.player.mana = gp.player.maxMana;
 			gp.aSetter.setMonster();

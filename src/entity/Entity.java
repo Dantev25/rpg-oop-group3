@@ -11,7 +11,12 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.UtilityTool;
-
+/**
+ * class entity defines all monsters, player characters and npc's characteristics, behaviors, actions and attributes
+ * @author mrish
+ * @author Oomar
+ * @author Sadiyah
+ */
 public class Entity {
 	
 	GamePanel gp;
@@ -83,7 +88,7 @@ public class Entity {
 	public final int type_pickupOnly = 7;
 	public final int type_nowep = 8;
 	/**
-	 * class entity defines all monsters, player characters and npc's
+	 * constructor for entity
 	 * @param gp is the GamePanel used to run the game
 	 */
  	public Entity (GamePanel gp) {

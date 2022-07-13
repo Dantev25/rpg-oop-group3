@@ -19,7 +19,9 @@ import tile_interactive.IT_Trunk;
  * the monsters: green slimes and red mages and 
  * the interactive tile: dry trees and trunk on the map.
  * @author mrish
- *
+ * @author Oomar
+ * @author Sadiyah
+ * 
  */
 public class AssetSetter {
 	

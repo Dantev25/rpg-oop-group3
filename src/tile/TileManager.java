@@ -10,7 +10,13 @@ import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.UtilityTool;
-
+/**
+ * Sets up the interactions of non interactive tiles
+ * @author mrish
+ * @author Oomar
+ * @author Sadiyah
+ *
+ */
 public class TileManager {
 
 	
@@ -18,7 +24,9 @@ public class TileManager {
 	public Tile[] tile;
 	
 	public int mapTileNum[][];
-	
+	/*
+	 * constructor for TileManager
+	 */
 	public TileManager(GamePanel gp) {
 		
 		this.gp = gp;
@@ -32,6 +40,11 @@ public class TileManager {
 		loadMap("/maps/worldV2.txt");
 	}
 	
+	/**
+	 * method to load map
+	 * @param filePath is the filepath of the map
+	 * 
+	 */
 	public void loadMap(String filePath) {
 		try {
 			
@@ -65,6 +78,10 @@ public class TileManager {
 			
 		}
 	}
+	/**
+	 * loads tile images, assigns names to them and sets up their collision values
+	 * 
+	 */
 	public void getTileImage() {
 		//PLACEHOLDER
 		setup(1, "grass00", false);
@@ -113,7 +130,12 @@ public class TileManager {
 		setup(41, "tree", true);
 		
 	}
-	
+	/**
+	 * instantiate a Tile, loads image into it, and sets collision
+	 * @param index - value to represent this tile in map
+	 * @param imageName - name of image
+	 * @param collision - collision value
+	 */
 	public void setup(int index, String imageName, boolean collision) {
 		
 		UtilityTool uTool = new UtilityTool();
@@ -130,6 +152,10 @@ public class TileManager {
 		}
 	}
 	
+	/**
+	 * draws the tiles onto the map
+	 * @param g2 - graphics object used to display graphics onto screen
+	 */
 	public void draw(Graphics2D g2) {
 		
 		int worldCol = 0;
