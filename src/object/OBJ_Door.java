@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Door.
+ * @author mrish
+ *
+ */
 public class OBJ_Door extends Entity{
 	
 	public OBJ_Door(GamePanel gp) {

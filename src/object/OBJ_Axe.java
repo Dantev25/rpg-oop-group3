@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Axe.
+ * @author mrish
+ *
+ */
 public class OBJ_Axe extends Entity{
 	
 	public OBJ_Axe(GamePanel gp) {

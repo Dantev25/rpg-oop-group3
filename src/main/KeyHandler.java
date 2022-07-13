@@ -172,7 +172,13 @@ public class KeyHandler implements KeyListener{
 			}
 			
 			if(code == KeyEvent.VK_F) {
-				shotKeyPressed = true;
+				if (playerType == 1) {
+					shotKeyPressed = false;
+				}
+				else {
+					shotKeyPressed = true;
+				}
+				
 			}
 			
 			if(code == KeyEvent.VK_ESCAPE) {

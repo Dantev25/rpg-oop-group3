@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Red Potion.
+ * @author mrish
+ *
+ */
 public class OBJ_Potion_Red extends Entity{
 	
 	GamePanel gp;
