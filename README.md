@@ -14,8 +14,8 @@ Group 3
 1. [Project Description](#projectdescription)
 2. [Game Instructions](#gameinstructions)
 3. [Game Development and Design](#gamedevelopmentanddesign)
-3. [UML](#uml)
-4. [Authors](#authors)
+4. [UML](#uml)
+5. [Authors](#authors)
  
 ## Project Description
 
@@ -67,4 +67,7 @@ Old Man
 * Kholeepa B. Sadiyah ID: 2014254
 
 * Rajanah Mrishana ID: 2011318
+
+* Idriss Koodoruth ID: 2016229
+
 
