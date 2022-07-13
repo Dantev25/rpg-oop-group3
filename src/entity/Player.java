@@ -57,8 +57,8 @@ public class Player extends Entity{
 	
 	public void setDefaultValues() {
 		
-		worldX = gp.tileSize * 23;
-		worldY = gp.tileSize * 21;
+		worldX = gp.tileSize * 20;
+		worldY = gp.tileSize * 29;
 		speed = 4;		
 		direction = "down";
 		
@@ -121,7 +121,7 @@ public class Player extends Entity{
 			currentWeapon = new OBJ_StrongAxe(gp);
 			currentShield = new OBJ_Shield_Wood(gp);
 			
-			projectile = new OBJ_Fireball(gp);
+			
 			attack = getAttack();
 			defense = getDefense();
 			getPlayerImage();
@@ -386,7 +386,7 @@ public class Player extends Entity{
 		}
 		
 		if(gp.keyH.shotKeyPressed == true && projectile.alive == false 
-				&& shotAvailableCounter == 30 && projectile.haveResource(this) == true) {
+				&& shotAvailableCounter == 30 && projectile.haveResource(this) == true && gp.keyH.playerType!=1) {
 			
 			// SET DEFAULT COODINATES, DIRECTION AND USER
 			projectile.set(worldX, worldY, direction, true, this);
