@@ -1,52 +1,55 @@
 package monster;
 
 import java.util.Random;
-
 import entity.Entity;
 import main.GamePanel;
 import object.OBJ_Coin_Bronze;
+import object.OBJ_Fireball;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 import object.OBJ_Rock;
 
-public class MON_GreenSlime extends Entity{
-
+public class MON_Mage extends Entity{
 	GamePanel gp;
-	public MON_GreenSlime(GamePanel gp) {
+	public MON_Mage(GamePanel gp) {
 		super(gp);
 		
 		this.gp = gp;
 		
 		type = type_monster;
-		name = "Green Slime";
-		speed = 1;
-		maxLife = 20;
+		name = "Mage";
+		speed = 2;
+		maxLife = 100;
 		life = maxLife;
-		attack = 6;
+		attack = 8;
 		defense = 0;
 		exp = 10;
-		projectile = new OBJ_Rock(gp);
+		projectile = new OBJ_Fireball(gp);
 		
-		solidArea.x = 3;
-		solidArea.y = 18;
-		solidArea.width = 42;
-		solidArea.height = 30;
+		solidArea.x = 8;
+		solidArea.y = 16;
+		solidArea.width = 28;
+		solidArea.height = 28;
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 		
 		getImage();
-	}
+}
+
+
+
+
 	
 	public void getImage() {
 		
-		up1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		up2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		down1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		down2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		right1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		right2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
-		left1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
-		left2 = setup("/monster/greenslime_down_2", gp.tileSize, gp.tileSize);
+		up1 = setup("/monster/mage_down_1", gp.tileSize, gp.tileSize);
+		up2 = setup("/monster/mage_down_2", gp.tileSize, gp.tileSize);
+		down1 = setup("/monster/mage_down_1", gp.tileSize, gp.tileSize);
+		down2 = setup("/monster/mage_down_2", gp.tileSize, gp.tileSize);
+		right1 = setup("/monster/mage_right_1", gp.tileSize, gp.tileSize);
+		right2 = setup("/monster/mage_right_2", gp.tileSize, gp.tileSize);
+		left1 = setup("/monster/mage_left_1", gp.tileSize, gp.tileSize);
+		left2 = setup("/monster/mage_left_2", gp.tileSize, gp.tileSize);
 
 		
 	}
@@ -111,21 +114,6 @@ public class MON_GreenSlime extends Entity{
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
