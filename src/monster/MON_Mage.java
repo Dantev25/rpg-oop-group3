@@ -7,7 +7,12 @@ import object.OBJ_Coin_Bronze;
 import object.OBJ_Fireball;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
-
+/**
+ * This class implements the monster mage.
+ * This class inherits the Entity class.
+ * @author mrish
+ *
+ */
 public class MON_Mage extends Entity{
 	GamePanel gp;
 	public MON_Mage(GamePanel gp) {
@@ -34,10 +39,9 @@ public class MON_Mage extends Entity{
 		
 		getImage();
 }
-
-
-
-
+	/**
+	 * This returns monster mage image.
+	 */
 	
 	public void getImage() {
 		
@@ -52,7 +56,9 @@ public class MON_Mage extends Entity{
 
 		
 	}
-	
+	/**
+	 * This returns monster mage random movements.
+	 */
 	public void setAction() {
 		actionLockCounter++;	
 		
@@ -86,13 +92,17 @@ public class MON_Mage extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * This returns monster mage damage reaction
+	 */
 	public void damageReaction () {
 		
 		actionLockCounter = 0;
 		direction = gp.player.direction;
 	}
-	
+	/**
+	 * This returns monster mage random item drop when killed.
+	 */
 	public void checkDrop() {
 		
 		// CAST A DIE

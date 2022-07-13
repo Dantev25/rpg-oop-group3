@@ -2,10 +2,20 @@ package entity;
 
 import main.GamePanel;
 
+/**
+ * This class implements the projectile.
+ * This class inherits the Entity class.
+ * @author mrish
+ *
+ */
+
 public class Projectile extends Entity{
 	
 	Entity user;
-	
+	/**
+	 * This constructs the Projectile
+	 * @param gp this game panel
+	 */
 	public Projectile(GamePanel gp) {
 		super(gp);
 		

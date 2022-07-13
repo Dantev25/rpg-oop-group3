@@ -8,7 +8,12 @@ import object.OBJ_Coin_Bronze;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 import object.OBJ_Rock;
-
+/**
+ * This class implements the monster green slime.
+ * This class inherits the Entity class.
+ * @author mrish
+ *
+ */
 public class MON_GreenSlime extends Entity{
 
 	GamePanel gp;
@@ -36,7 +41,9 @@ public class MON_GreenSlime extends Entity{
 		
 		getImage();
 	}
-	
+	/**
+	 * This returns monster green slime image.
+	 */
 	public void getImage() {
 		
 		up1 = setup("/monster/greenslime_down_1", gp.tileSize, gp.tileSize);
@@ -50,7 +57,9 @@ public class MON_GreenSlime extends Entity{
 
 		
 	}
-	
+	/**
+	 * This returns monster green slime random movements.
+	 */
 	public void setAction() {
 		actionLockCounter++;	
 		
@@ -84,13 +93,17 @@ public class MON_GreenSlime extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * This returns monster green slime damage reaction
+	 */
 	public void damageReaction () {
 		
 		actionLockCounter = 0;
 		direction = gp.player.direction;
 	}
-	
+	/**
+	 * This returns monster green slime random item drop when killed.
+	 */
 	public void checkDrop() {
 		
 		// CAST A DIE

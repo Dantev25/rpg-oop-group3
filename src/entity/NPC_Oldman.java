@@ -3,7 +3,12 @@ package entity;
 import java.util.Random;
 
 import main.GamePanel;
-
+/**
+ * This class implements the non-player character old man.
+ * This class inherits the Entity class.
+ * @author mrish
+ *
+ */
 public class NPC_Oldman extends Entity{
 
 	public NPC_Oldman(GamePanel gp) {
@@ -14,7 +19,9 @@ public class NPC_Oldman extends Entity{
 		getImage();
 		setDialogue();
 	}
-	
+	/**
+	 * This returns non-player character old man image.
+	 */
 	public void getImage() {
 		
 		up1 = setup("/npc/oldman_up_1", gp.tileSize, gp.tileSize); 
@@ -26,7 +33,9 @@ public class NPC_Oldman extends Entity{
 		left1 = setup("/npc/oldman_left_1", gp.tileSize, gp.tileSize);
 		left2 = setup("/npc/oldman_left_2", gp.tileSize, gp.tileSize);
 	}
-	
+	/**
+	 * This returns non-player character old man dialogues.
+	 */
 	public void setDialogue() {
 		
 		dialogues[0] = "Hello boy. ";
@@ -37,6 +46,9 @@ public class NPC_Oldman extends Entity{
 		
 	}
 	
+	/**
+	 * This returns non-player character old man random movements.
+	 */
 	public void setAction() {
 		
 		actionLockCounter++;
@@ -62,7 +74,9 @@ public class NPC_Oldman extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * This returns non-player character old man to speak.
+	 */
 	public void speak() {
 		
 		super.speak();
