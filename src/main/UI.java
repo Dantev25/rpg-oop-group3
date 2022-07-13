@@ -12,9 +12,10 @@ import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 
 /**
- * This class implements the User Interface.
+ * This class handles the User Interface.
  * @author mrish
- *
+ * @author Oomar
+ * @author Sadiyah
  */
 public class UI {
 	
@@ -54,7 +55,7 @@ public class UI {
 		crystal_blank = crystal.image2;
 	}
 	/**
-	 * This returns the added text.
+	 * This method displays the text that is passed to it onto the screen.
 	 * @param text this added text.
 	 */
 	public void addMessage(String text) {
@@ -63,7 +64,14 @@ public class UI {
 		messageCounter.add(0);
 	}
 	/**
-	 * This returns the game state
+	 * This draws the appropriate ui for the current gamestates
+	 * title state
+	 * play state
+	 * pause state
+	 * dialogue state
+	 * character state
+	 * options state
+	 * game over state
 	 * @param g2
 	 */
 	public void draw(Graphics2D g2) {
@@ -108,7 +116,7 @@ public class UI {
 		
 	}
 	/**
-	 * This returns the title screen.
+	 * This displays the title screen.
 	 */
 	public void drawTitleScreen() {
 		
@@ -216,7 +224,7 @@ public class UI {
 		
 	}
 	/**
-	 * This returns the player life.
+	 * This displays the player life as hearts and mana as crystals in top left.
 	 */
 	public void drawPlayerLife() {
 		int x = gp.tileSize/4;
@@ -268,7 +276,7 @@ public class UI {
 		}
 	}
 	/**
-	 * This returns the message.
+	 * This displays the message.
 	 */
 	public void drawMessage() {
 	
@@ -297,7 +305,7 @@ public class UI {
 		}
 	}
 	/**
-	 * This returns the pause screen.
+	 * This display the pause screen.
 	 */
 	public void drawPauseScreen() {
 		
@@ -311,7 +319,7 @@ public class UI {
 	}
 	
 	/**
-	 * This returns the dialogue screen.
+	 * This display the dialogue screen.
 	 */
 	public void drawDialogueScreen() {
 		
@@ -334,7 +342,7 @@ public class UI {
 		
 	}
 	/**
-	 * This returns the character screen.
+	 * This display the character screen.
 	 */
 	public void drawCharacterScreen() {
 		
@@ -443,7 +451,7 @@ public class UI {
 		
 	}
 	/**
-	 * This returns the inventory.
+	 * This display the inventory.
 	 */
 	public void drawInventory() {
 		
@@ -513,7 +521,7 @@ public class UI {
 		}
 	}
 	/**
-	 * This returns the options screen.
+	 * This display the options screen.
 	 */
 	public void drawOptionsScreen() {
 		
@@ -538,7 +546,7 @@ public class UI {
 		gp.keyH.enterPressed = false;
 	}
 	/**
-	 * This returns the top options.
+	 * This display the top options.
 	 * @param frameX this frame X
 	 * @param frameY this frame Y
 	 */
@@ -641,7 +649,7 @@ public class UI {
 		gp.config.saveConfig();
 	}
 	/**
-	 * This returns the full screen message option.
+	 * This display the full screen message option.
 	 * @param frameX this frame X
 	 * @param frameY this frame X
 	 */
@@ -668,7 +676,7 @@ public class UI {
 		}
 	}
 	/**
-	 * This returns the control options.
+	 * This display the control options.
 	 * @param frameX this frame X
 	 * @param frameY this frame y
 	 */
@@ -714,11 +722,12 @@ public class UI {
 		}
 	}
 	/**
-	 * This returns the end game affirmation.
+	 * This display the end game affirmation.
 	 * @param frameX this frame X
 	 * @param frameY this frame Y
 	 */
 	public void options_endGameConfirmation(int frameX, int frameY) {
+
 		
 		int textX = frameX + gp.tileSize;
 		int textY = frameY + gp.tileSize*3;
@@ -756,6 +765,9 @@ public class UI {
 			}
 		}
 	}
+	/**
+	 * displays the game over screen
+	 */
 	public void	drawGameOverScreen(){
 		g2.setColor(new Color(0,0,0,255));
 		g2.fillRect(0, 0, gp.screenWidth, gp.screenHeight);
@@ -803,7 +815,7 @@ public class UI {
 		return itemIndex;
 	}
 	/**
-	 * This returns the sub window.
+	 * This displays the sub window.
 	 * @param x this x coordinate of the rectangle to be filled.
 	 * @param y this y coordinate of the rectangle to be filled.
 	 * @param width this width of the rectangle to be filled.
@@ -821,7 +833,7 @@ public class UI {
 		g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
 	}
 	/**
-	 * This returns the centered text.
+	 * This displays the centered text.
 	 * @param text
 	 * @return this centered text
 	 */
@@ -833,7 +845,7 @@ public class UI {
 		return x;
 	}
 	/**
-	 * This returns the aligned text.
+	 * This displays the aligned text.
 	 * @param text 
 	 * @param tailX 
 	 * @return this aligned Text

@@ -127,7 +127,9 @@ public class GamePanel extends JPanel implements Runnable{
 			setFullScreen();
 		}
 	}
-	
+	/**
+	 * this method resets the player to the initial position on the map and restores the life and mana they had
+	 */
 	public void retry() {
 		player.setDefaultPositions();
 		player.restoreLifeAndMana();
@@ -135,6 +137,9 @@ public class GamePanel extends JPanel implements Runnable{
 		aSetter.setMonster();
 	}
 	
+	/**
+	 * this method restarts the game from the main menu
+	 */
 	public void restart() {
 		player.setDefaultValues();
 		player.setDefaultPositions();
@@ -206,7 +211,12 @@ public class GamePanel extends JPanel implements Runnable{
 		}
 	}
 	/**
-	 * This updates the game state.
+	 * This updates the game state for:
+	 * npc
+	 * player
+	 * projectiles
+	 * particles
+	 * interactive tiles
 	 */
 	public void update() {
 		
@@ -269,7 +279,7 @@ public class GamePanel extends JPanel implements Runnable{
 		}
 	}
 	/**
-	 * This returns the temporary screen.
+	 * This method buffers and draws the temporary screen, that will be used to draw the main screen.
 	 */
 	public void drawToTempScreen() {
 		
@@ -383,7 +393,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	
 	/**
-	 * This returns the screen.
+	 * This method draws the actual screen.
 	 */
 	public void drawToScreen() {
 		
@@ -393,7 +403,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	/**
 	 * This plays music,
-	 * @param i the number of the soundURL being constructed.
+	 * @param i the index of the soundURL being constructed.
 	 */
 	public void playMusic(int i) {
 		
@@ -412,7 +422,7 @@ public class GamePanel extends JPanel implements Runnable{
 	}
 	/**
 	 * This plays the sound effects.
-	 * @param i the number of the soundURL being constructed.
+	 * @param i the index of the soundURL being constructed.
 	 */
 	public void playSE(int i) {
 		
