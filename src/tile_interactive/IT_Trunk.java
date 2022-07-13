@@ -1,7 +1,12 @@
 package tile_interactive;
 
 import main.GamePanel;
-
+/**
+ * This class implements the Interactive Tile Trunk
+ * This class inherits the class Interactive Tile
+ * @author mrish
+ *
+ */
 public class IT_Trunk extends InteractiveTile{
 	
 		public IT_Trunk(GamePanel gp, int col, int row) {

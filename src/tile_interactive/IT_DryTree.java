@@ -4,7 +4,12 @@ import java.awt.Color;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the Interactive Tile Dry Tree
+ * This class inherits the class Interactive Tile
+ * @author mrish
+ *
+ */
 public class IT_DryTree extends InteractiveTile{
 
 	GamePanel gp;
@@ -30,30 +35,43 @@ public class IT_DryTree extends InteractiveTile{
 		
 		return isCorrectItem;
 	}
+	/**
+	 * This method plays the sound effects 11.
+	 */
 	public void playSE() {
 		gp.playSE(11);
 	}
-	
+	/**
+	 * This returns the interactive tile trunk.
+	 */
 	public InteractiveTile getDestroyedForm() {
 		InteractiveTile tile = new IT_Trunk(gp,worldX/gp.tileSize,worldY/gp.tileSize);
 		return tile;
 	}
-	
+	/**
+	 * This returns the Particle color.
+	 */
 	public Color getParticleColor() {
 		Color color = new Color(65,50,30);
 		return color;
 	}
-	
+	/**
+	 * This returns the Particle size.
+	 */
 	public int getParticleSize() {
 		int size = 6; // 6 pixels
 		return size;
 	}
-	
+	/**
+	 * This returns the Particle speed.
+	 */
 	public int getParticleSpeed() {
 		int speed = 1;
 		return speed;
 	}
-	
+	/**
+	 * This returns the Particle maximum life.
+	 */
 	public int getParticleMaxLife() {
 		int maxLife = 20;
 		return maxLife;

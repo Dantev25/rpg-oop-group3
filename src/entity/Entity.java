@@ -85,6 +85,10 @@ public class Entity {
 	public final int type_obstacle = 9;
 	private int length;
 	
+	/**
+	 * class entity defines all monsters, player characters and npc's
+	 * @param gp is the GamePanel used to run the game
+	 */
  	public Entity (GamePanel gp) {
 		this.gp = gp;
 	}
@@ -115,7 +119,9 @@ public class Entity {
  	
 	public void setAction() {}
 	public void damageReaction() {}
-	
+	/**
+	 * handles speech with npc's
+	 */
 	public void speak() {
 		
 		if(dialogues[dialogueIndex] == null) {
@@ -152,7 +158,10 @@ public class Entity {
 	public void checkDrop() {
 		
 	}
-	
+	/**
+	 * method dropItem places an item in the place of a dead monster's body
+	 * @param droppedItem is the dropped item
+	 */
 	public void dropItem(Entity droppedItem) {
 		for (int i = 0;i<gp.obj.length;i++) {
 			if(gp.obj[i] == null) {
@@ -199,7 +208,10 @@ public class Entity {
 		int maxLife = 0;
 		return maxLife;
 	}
-	
+	/**
+	 * This method generates particles when attacking or receiving attacks.
+	 * uses the class particle to instantiate objects particle, and  method add to add them to the gamepanel
+	 */
 	public void generateParticle(Entity generator, Entity target) {
 		
 		Color color = generator.getParticleColor();
@@ -216,7 +228,10 @@ public class Entity {
 		gp.particleList.add(p3);
 		gp.particleList.add(p4);
 	}
-	
+	/**
+	 * This method uses collision checker, to check whether an entity is making contact with another
+	 * no collision allows movement
+	 */
 	public void update() {
 		
 		setAction();
@@ -268,7 +283,10 @@ public class Entity {
 			shotAvailableCounter++;
 		}
 	}
-	
+	/**
+	 * This method calculated damage given to a player
+	 * @param attack is the attack of the entity attacking the player
+	 */
 	public void damagePlayer(int attack) {
 		
 		if (gp.player.invincible == false) {
@@ -285,7 +303,10 @@ public class Entity {
 		}
 		
 	}
-	
+	/**
+	 * This uses the package Graphics2D to draw entity graphics onto the map
+	 * @param g2 is the graphics object from class Graphics2D used to display graphics
+	 */
 	public void draw(Graphics2D g2) {
 		
 		BufferedImage image = null;
@@ -356,7 +377,10 @@ public class Entity {
 		
 	}
 	
-	
+	/**
+	 * This uses the package Graphics2D to draw dying animation graphics onto the screen
+	 * @param g2 is the graphics object from class Graphics2D used to display graphics
+	 */
 	void dyingAnimation(Graphics2D g2) {
 		
 		dyingCounter++;
@@ -374,10 +398,19 @@ public class Entity {
 			alive = false;
 		}
 	}
-	
+	/**
+	 * This uses the package Graphics2D to make a graphic object on the screen appear transparent depending on alphaValue
+	 * @param g2 is the graphics object from class Graphics2D used to display graphics
+	 * @param alphaValue is the alpha value from 0-255 of the graphics 
+	 */
 	public void changeAlpha(Graphics2D g2, float alphaValue) {
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alphaValue));
 	}
+	/**
+	 * This method reads an image from an entity subclass and loads it
+	 * @param imagePath is the skeletal path of the image to be loaded
+	 * @param width, height are the size parameters of the picture
+	 */
 	public BufferedImage setup(String imagePath, int width, int height) {
 		
 		UtilityTool uTool = new UtilityTool();	

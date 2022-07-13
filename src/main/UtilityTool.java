@@ -2,7 +2,11 @@ package main;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
-
+/**
+ * This class implements the Utility Tool
+ * @author mrish
+ *
+ */
 public class UtilityTool {
 	public BufferedImage scaleImage(BufferedImage original, int width, int height) {
 		
