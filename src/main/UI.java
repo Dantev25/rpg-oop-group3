@@ -11,7 +11,11 @@ import entity.Entity;
 import object.OBJ_Heart;
 import object.OBJ_ManaCrystal;
 
-
+/**
+ * This class implements the User Interface.
+ * @author mrish
+ *
+ */
 public class UI {
 	
 	GamePanel gp;
@@ -30,7 +34,10 @@ public class UI {
 	int subState = 0;
 	
 
-	
+	/**
+	 * This constructs the User Interface.
+	 * @param gp this game panel
+	 */
 	public UI(GamePanel gp) {
 		this.gp = gp;
 		
@@ -46,12 +53,19 @@ public class UI {
         crystal_full = crystal.image;
 		crystal_blank = crystal.image2;
 	}
-	
+	/**
+	 * This returns the added text.
+	 * @param text this added text.
+	 */
 	public void addMessage(String text) {
 		
 		message.add(text);
 		messageCounter.add(0);
 	}
+	/**
+	 * This returns the game state
+	 * @param g2
+	 */
 	public void draw(Graphics2D g2) {
 		
 		this.g2 = g2;
@@ -90,6 +104,9 @@ public class UI {
 		}
 		
 	}
+	/**
+	 * This returns the title screen.
+	 */
 	public void drawTitleScreen() {
 		
 		if(titleScreenState == 0) {
@@ -195,7 +212,9 @@ public class UI {
 		
 		
 	}
-
+	/**
+	 * This returns the player life.
+	 */
 	public void drawPlayerLife() {
 		int x = gp.tileSize/4;
 		int y = gp.tileSize/4;
@@ -245,7 +264,9 @@ public class UI {
 			x += gp.tileSize/2;
 		}
 	}
-	
+	/**
+	 * This returns the message.
+	 */
 	public void drawMessage() {
 	
 		int messageX = gp.tileSize;
@@ -272,6 +293,9 @@ public class UI {
 			}
 		}
 	}
+	/**
+	 * This returns the pause screen.
+	 */
 	public void drawPauseScreen() {
 		
 		g2.setFont(g2.getFont().deriveFont(Font.PLAIN,80F));
@@ -283,7 +307,9 @@ public class UI {
 		g2.drawString(text, x, y);
 	}
 	
-	
+	/**
+	 * This returns the dialogue screen.
+	 */
 	public void drawDialogueScreen() {
 		
 		//WINDOW
@@ -304,6 +330,9 @@ public class UI {
 		}
 		
 	}
+	/**
+	 * This returns the character screen.
+	 */
 	public void drawCharacterScreen() {
 		
 		// CREATE A FRAME
@@ -410,7 +439,9 @@ public class UI {
 		
 		
 	}
-	
+	/**
+	 * This returns the inventory.
+	 */
 	public void drawInventory() {
 		
 		//FRAME
@@ -478,7 +509,9 @@ public class UI {
 			}
 		}
 	}
-	
+	/**
+	 * This returns the options screen.
+	 */
 	public void drawOptionsScreen() {
 		
 		g2.setColor(Color.white);
@@ -501,7 +534,11 @@ public class UI {
 		
 		gp.keyH.enterPressed = false;
 	}
-	
+	/**
+	 * This returns the top options.
+	 * @param frameX this frame X
+	 * @param frameY this frame Y
+	 */
 	public void options_top(int frameX, int frameY) {
 		
 		int textX;
@@ -600,7 +637,11 @@ public class UI {
 		
 		gp.config.saveConfig();
 	}
-	
+	/**
+	 * This returns the full screen message option.
+	 * @param frameX this frame X
+	 * @param frameY this frame X
+	 */
 	public void options_fullscreenNotification(int frameX, int frameY) {
 		
 		int textX = frameX + gp.tileSize;
@@ -623,7 +664,11 @@ public class UI {
 			}
 		}
 	}
-	
+	/**
+	 * This returns the control options.
+	 * @param frameX this frame X
+	 * @param frameY this frame y
+	 */
 	public void options_control(int frameX, int frameY) {
 		
 		int textX;
@@ -665,7 +710,11 @@ public class UI {
 			}
 		}
 	}
-	
+	/**
+	 * This returns the end game affirmation.
+	 * @param frameX this frame X
+	 * @param frameY this frame Y
+	 */
 	public void options_endGameConfirmation(int frameX, int frameY) {
 		
 		int textX = frameX + gp.tileSize;
@@ -704,12 +753,21 @@ public class UI {
 			}
 		}
 	}
-	
+	/**
+	 * This returns the item index on slot.
+	 * @return this item index.
+	 */
 	public int getItemIndexOnSlot() {
 		int itemIndex = slotCol + (slotRow*5);
 		return itemIndex;
 	}
-	
+	/**
+	 * This returns the sub window.
+	 * @param x this x coordinate of the rectangle to be filled.
+	 * @param y this y coordinate of the rectangle to be filled.
+	 * @param width this width of the rectangle to be filled.
+	 * @param height this height of the rectangle to be filled.
+	 */
 	public void drawSubWindow(int x, int y, int width, int height) {
 		
 		Color c = new Color(0,0,0,200);
@@ -721,7 +779,11 @@ public class UI {
 		g2.setStroke(new BasicStroke(5));
 		g2.drawRoundRect(x+5, y+5, width-10, height-10, 25, 25);
 	}
-	
+	/**
+	 * This returns the centered text.
+	 * @param text
+	 * @return this centered text
+	 */
 	public int getXforCenteredText(String text) {
 		
 		int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
@@ -729,7 +791,12 @@ public class UI {
 		
 		return x;
 	}
-	
+	/**
+	 * This returns the aligned text.
+	 * @param text 
+	 * @param tailX 
+	 * @return this aligned Text
+	 */
 	public int getXforAlignToRightText(String text, int tailX) {
 		
 		int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();

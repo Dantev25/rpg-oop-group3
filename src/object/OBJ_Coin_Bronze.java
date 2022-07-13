@@ -4,6 +4,7 @@ import entity.Entity;
 import main.GamePanel;
 /**
  * This class implements the object Bronze coin.
+ * This class inherits the Entity Class.
  * @author mrish
  *
  */
