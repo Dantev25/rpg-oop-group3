@@ -16,7 +16,12 @@ import object.OBJ_NoWep;
 import object.OBJ_Shield_Wood;
 import object.OBJ_StrongAxe;
 import object.OBJ_Sword_Normal;
-
+/**
+ * defines Class player, a subclass of Entity, which takes care of all player initialisations and interactions
+ * @author Oomar
+ * @author Sadiyah
+ * @author Mrish
+ */
 public class Player extends Entity{
 	
 
@@ -28,7 +33,11 @@ public class Player extends Entity{
 	public ArrayList<Entity> inventory = new ArrayList<>();
 	public final int maxInventorySize = 20;
 	public int ptype = 0;
-	
+	/**
+	 * Setter for initial values of player character
+	 * @param gp - gamepanel
+	 * @param keyH - key listener for keyboard input
+	 */
 	public Player(GamePanel gp, KeyHandler keyH) {
 		super(gp);
 		
@@ -55,7 +64,9 @@ public class Player extends Entity{
 		getAttackImage();
 		
 	}
-	
+	/**
+	 * setter for default values of player
+	 */
 	public void setDefaultValues() {
 		
 		worldX = gp.tileSize * 29;
@@ -84,6 +95,10 @@ public class Player extends Entity{
 		
 
 	}
+	/**
+	 * setter for player character after player chooses type
+	 * @param i player type chosen in start menu
+	 */
 	public void updateDefaultValues(int i) {
 		if (i == 0) {
 			ptype = 0;
@@ -151,19 +166,25 @@ public class Player extends Entity{
 			setItems();
 		}
 	}
-	
+	/**
+	 * setter for default location of player character
+	 */
 	public void setDefaultPositions() {
 		worldX = gp.tileSize * 23;
 		worldY = gp.tileSize * 21;
 		direction = "down";
 	}
-	
+	/**
+	 * method to restore life and mana to the character
+	 */
 	public void restoreLifeAndMana() {
 		life = maxLife;
 		mana = maxMana;
 		invincible = false;
 	}
-
+	/**
+	 * setter for initial inventory of player
+	 */
  	public void setItems() {
  		inventory.clear();
 		inventory.add(currentWeapon);
@@ -178,7 +199,6 @@ public class Player extends Entity{
 	 * The total attack value is decided by strength and weapon.
 	 * @return this attack value.
 	 */
-	
 	public int getAttack() {
 		attackArea = currentWeapon.attackArea;
 		return attack = strength + currentWeapon.attackValue;
@@ -193,6 +213,10 @@ public class Player extends Entity{
 	public int getDefense() {
 		return defense = dexterity + currentShield.defenseValue;
 	}
+	
+	/**
+	 * loads appropriate walking images based on type of character chosen
+	 */
 	public void getPlayerImage() {
 		if(ptype == 0) {
 			up1 = setup("/player/boy_up_1", gp.tileSize, gp.tileSize); 
@@ -225,7 +249,9 @@ public class Player extends Entity{
 			left2 = setup("/player/sorcerer_left_2", gp.tileSize, gp.tileSize);
 		}
 	}
-	
+	/**
+	 * loads appropriate attacking images based on type of character chosen
+	 */
 	public void getAttackImage() {
 		if(ptype == 0) {
 			if(currentWeapon.type == type_nowep){
@@ -311,7 +337,14 @@ public class Player extends Entity{
 		
 	}
 	
-	
+	/**
+	 * Updates the state of the player character
+	 * Handles collision of player
+	 * movement of player
+	 * attacking
+	 * Handles player character shooting projectiles
+	 * also handles gameover if life = 0
+	 */
 	public void update() {
 		if(attacking == true) {
 			attacking();
@@ -446,7 +479,10 @@ public class Player extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * handles attacking images, and collision calculations
+	 * 
+	 */
 	public void attacking() {
 		
 		spriteCounter++;
@@ -494,7 +530,10 @@ public class Player extends Entity{
 		}
 		
 	}
-
+	/**
+	 * handles picking up objects that can be kept in inventory, or pickup only items(disappears after pickup)
+	 * @param i -  item index
+	 */
 	public void pickUpObject(int i) {
 		
 		if(i != 999) {
@@ -525,6 +564,10 @@ public class Player extends Entity{
 		}
 		
 	}
+	/**
+	 * handles dialogue with npc
+	 * @param i index of npc
+	 */
 	public void interactNPC(int i) {
 		if(gp.keyH.enterPressed == true) {
 			if(i != 999) {
@@ -537,7 +580,10 @@ public class Player extends Entity{
 		}
 		
 	}
-
+	/**
+	 * handles direct hit with monster, inflicts damage to player and set invisibility frame
+	 * @param i
+	 */
 	public void contactMonster(int i) {
 		
 		if(i != 999) {
@@ -557,7 +603,11 @@ public class Player extends Entity{
 		
 	}
 
-	
+	/**
+	 * damages monster if player is attacking, and displays a message showing damage given
+	 * @param i
+	 * @param attack
+	 */
 	public void damageMonster(int i, int attack) {
 		
 		if (i != 999) {
@@ -588,7 +638,10 @@ public class Player extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * handles damage given to interactive tiles and decreases their health if hit with correct item
+	 * @param i
+	 */
 	public void damageInteractiveTile(int i) {
 		
 		if(i != 999 && gp.iTile[i].destructible ==true && 
@@ -607,7 +660,10 @@ public class Player extends Entity{
 			
 		}
 	}
-	
+	/**
+	 * checks exp of player if player can level up
+	 * upgrades stats based on player character type
+	 */
 	public void checkLevelUp() {
 		
 		if(exp >= nextLevelExp) {
@@ -648,7 +704,9 @@ public class Player extends Entity{
 		}
 		
 	}
-	
+	/**
+	 * handles item selection from inventory
+	 */
 	public void selectItem() {
 		
 		int itemIndex = gp.ui.getItemIndexOnSlot();
@@ -675,7 +733,12 @@ public class Player extends Entity{
 		}
 	}
 	
-
+	/**
+	 * method to draw player images whhen attacking or moving
+	 * also handles the player becoming translucent in invincibility mode
+	 * @param g2 is the graphics object used to display the object onto the screen
+	 * 
+	 */
 	public void draw(Graphics2D g2) {
 		
 		BufferedImage image = null;
