@@ -12,6 +12,7 @@ import object.OBJ_Axe;
 import object.OBJ_Fireball;
 import object.OBJ_Key;
 import object.OBJ_NoWep;
+import object.OBJ_Potion_Red;
 import object.OBJ_Shield_Wood;
 import object.OBJ_StrongAxe;
 import object.OBJ_Sword_Normal;
@@ -168,6 +169,7 @@ public class Player extends Entity{
 		inventory.add(currentWeapon);
 		inventory.add(currentShield);
 		inventory.add(new OBJ_Key(gp));
+		inventory.add(new OBJ_Potion_Red(gp));
 	}
 	
 	/**
@@ -503,6 +505,14 @@ public class Player extends Entity{
 				gp.obj[i] = null;
 			}
 			
+			// OBSTACLE
+			else if(gp.obj[i].type == type_obstacle) {
+				if(keyH.enterPressed == true) {
+					attackCanceled = true;
+					gp.obj[i].interact();
+				}
+			}
+			
 			// INVENTORY ITEMS
 			else {
 				String text;
@@ -647,8 +657,9 @@ public class Player extends Entity{
 			}
 			
 			if(selectedItem.type == type_consumable) {
-			    selectedItem.use(this);
-			    inventory.remove(itemIndex);
+			    if(selectedItem.use(this) ==  true) {
+			    	inventory.remove(itemIndex);
+			    }
 			}
 		}
 	}
