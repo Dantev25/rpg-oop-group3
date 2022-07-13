@@ -140,15 +140,30 @@ public class Entity {
 		return color;
 	}
 	
+	/**
+	 * This returns the particle size.
+	 * @return this particle size.
+	 */
+	
 	public int getParticleSize() {
 		int size = 0; // 6 pixels
 		return size;
 	}
 	
+	/**
+	 * This returns the particle speed.
+	 * @return this particle speed.
+	 */
+	
 	public int getParticleSpeed() {
 		int speed = 0;
 		return speed;
 	}
+	
+	/**
+	 * This returns the particle maximum life.
+	 * @return this particle maximum life.
+	 */
 	
 	public int getParticleMaxLife() {
 		int maxLife = 0;
