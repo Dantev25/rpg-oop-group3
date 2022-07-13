@@ -7,6 +7,7 @@ public class KeyHandler implements KeyListener{
 	
 	GamePanel gp;
 	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, shotKeyPressed;
+	public int playerType;
 	//DEBUG
 	boolean showDebugText = false;
 	
@@ -106,17 +107,20 @@ public class KeyHandler implements KeyListener{
 				}
 				if(code == KeyEvent.VK_ENTER) {
 					if(gp.ui.commandNum == 0) {
-//						System.out.println("Do some fighter specific stuff");
+						playerType = 0;
+						gp.player.updateDefaultValues(playerType);
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
 					if(gp.ui.commandNum == 1) {
-//						System.out.println("Do some thief specific stuff");
+						playerType = 1;
+						gp.player.updateDefaultValues(playerType);
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
 					if(gp.ui.commandNum == 2) {
-//						System.out.println("Do some sorcerer specific stuff");
+						playerType = 2;
+						gp.player.updateDefaultValues(playerType);
 						gp.gameState = gp.playState;
 						gp.playMusic(0);
 					}
