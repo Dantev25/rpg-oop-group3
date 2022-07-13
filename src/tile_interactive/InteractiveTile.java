@@ -6,7 +6,12 @@ import java.awt.image.BufferedImage;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the Interactive Tile 
+ * This class inherits the class Entity.
+ * @author mrish
+ *
+ */
 public class InteractiveTile extends Entity{
 	
 	GamePanel gp;
@@ -16,18 +21,26 @@ public class InteractiveTile extends Entity{
 		super(gp);
 		this.gp = gp;
 	}
-	
 	public boolean isCorrectItem(Entity entity) {
 		boolean isCorrectItem = false;
 		return isCorrectItem;
 	}
+	/**
+	 * This method plays the sound effects 11.
+	 */
 	public void playSE() {
 		
 	}
+	/**
+	 * This returns the interactive tile trunk.
+	 */
 	public InteractiveTile getDestroyedForm() {
 		InteractiveTile tile = null;
 		return tile;
 	}
+	/**
+	 * This updates dry tree invincible state.
+	 */
 	public void update()
 	{
 		if (invincible == true) {
@@ -38,7 +51,9 @@ public class InteractiveTile extends Entity{
 			}
 		}
 	}
-	
+	/**
+	 * This returns the 2D graphics
+	 */
 	public void draw(Graphics2D g2) {
 		BufferedImage image = null;
 		int screenX = worldX - gp.player.worldX + gp.player.screenX;
