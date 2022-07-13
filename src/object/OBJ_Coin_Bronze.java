@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Bronze coin.
+ * @author mrish
+ *
+ */
 public class OBJ_Coin_Bronze extends Entity{
 	
 	GamePanel gp;

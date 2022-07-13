@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Normal Sword.
+ * @author mrish
+ *
+ */
 public class OBJ_Sword_Normal extends Entity {
 	
 	public OBJ_Sword_Normal(GamePanel gp) {

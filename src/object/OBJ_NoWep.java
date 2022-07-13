@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object No Weapon.
+ * @author mrish
+ *
+ */
 public class OBJ_NoWep extends Entity{
 	public OBJ_NoWep(GamePanel gp){
 		super(gp);

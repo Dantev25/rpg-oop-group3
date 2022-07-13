@@ -5,7 +5,11 @@ import java.awt.Color;
 import entity.Entity;
 import entity.Projectile;
 import main.GamePanel;
-
+/**
+ * This class implements the object Fireball.
+ * @author mrish
+ *
+ */
 public class OBJ_Fireball extends Projectile{
 	
 	GamePanel gp;

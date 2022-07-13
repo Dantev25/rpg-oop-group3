@@ -5,7 +5,11 @@ import java.awt.Color;
 import entity.Entity;
 import entity.Projectile;
 import main.GamePanel;
-
+/**
+ * This class implements the object Rock.
+ * @author mrish
+ *
+ */
 public class OBJ_Rock extends Projectile{
 	
 	GamePanel gp;

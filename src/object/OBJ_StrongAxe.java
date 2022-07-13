@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Strong Axe.
+ * @author mrish
+ *
+ */
 public class OBJ_StrongAxe extends Entity{
 	
 	public OBJ_StrongAxe(GamePanel gp) {

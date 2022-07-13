@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Wooden Shield.
+ * @author mrish
+ *
+ */
 public class OBJ_Shield_Wood extends Entity{
 	
 	public OBJ_Shield_Wood(GamePanel gp) {

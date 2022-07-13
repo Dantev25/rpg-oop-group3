@@ -2,7 +2,11 @@ package object;
 
 import entity.Entity;
 import main.GamePanel;
-
+/**
+ * This class implements the object Heart.
+ * @author mrish
+ *
+ */
 public class OBJ_Heart extends Entity{
 	
 	GamePanel gp;
