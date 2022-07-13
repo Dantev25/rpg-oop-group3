@@ -16,7 +16,12 @@ import entity.Entity;
 import entity.Player;
 import tile.TileManager;
 import tile_interactive.*;
-
+/**
+ * This class implements the game screen.
+ * This class inherits the Jpanel Class.
+ * @author mrish
+ *
+ */
 public class GamePanel extends JPanel implements Runnable{
 	// SCREEN SETTINGS
 	final int originalTileSize = 16; //16x16size
@@ -92,15 +97,20 @@ public class GamePanel extends JPanel implements Runnable{
 	public final int optionsState = 5;
 	public final int gameOverState = 6;
 	
+	/**
+	 * This constructs the game panel.
+	 */
 	public GamePanel() {
-
+		//set the size of the jpanel class
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));
 		this.setBackground(Color.black);
 		this.setDoubleBuffered(true);
 		this.addKeyListener(keyH);
 		this.setFocusable(true);
 	}
-	
+	/**
+	 * This sets up the game panel.
+	 */
 	public void setupGame() {	
 		
 		aSetter.setObject();
@@ -135,7 +145,9 @@ public class GamePanel extends JPanel implements Runnable{
 		aSetter.setMonster();
 		aSetter.setInteractiveTile();
 	}
-	
+	/**
+	 * This sets up full screen.
+	 */
 	public void setFullScreen() {
 		
 		// GET LOCAL SCREEN DEVICE
@@ -147,7 +159,9 @@ public class GamePanel extends JPanel implements Runnable{
 		screenWidth2 = Main.window.getWidth();
 		screenHeight2 = Main.window.getHeight();
 	}
-	
+	/**
+	 * This returns the game thread.
+	 */
 	public void startGameThread() {
 		
 		
@@ -155,7 +169,10 @@ public class GamePanel extends JPanel implements Runnable{
 		gameThread.start();
 	
 	}
-
+	
+	/**
+	 * This method implements the runnable interface.
+	 */
 	@Override
 	public void run() {
 		
@@ -188,6 +205,9 @@ public class GamePanel extends JPanel implements Runnable{
 		    }
 		}
 	}
+	/**
+	 * This updates the game state.
+	 */
 	public void update() {
 		
 		if(gameState == playState) {
@@ -248,7 +268,9 @@ public class GamePanel extends JPanel implements Runnable{
 			stopMusic();
 		}
 	}
-	
+	/**
+	 * This returns the temporary screen.
+	 */
 	public void drawToTempScreen() {
 		
 		//DEBUG
@@ -360,14 +382,19 @@ public class GamePanel extends JPanel implements Runnable{
 				}
 	}
 	
-	
+	/**
+	 * This returns the screen.
+	 */
 	public void drawToScreen() {
 		
 		Graphics g = getGraphics();
 		g.drawImage(tempScreen, 0, 0, screenWidth2, screenHeight2, null);
 		g.dispose();
 	}
-	
+	/**
+	 * This plays music,
+	 * @param i the number of the soundURL being constructed.
+	 */
 	public void playMusic(int i) {
 		
 		music.setFile(i);
@@ -376,12 +403,17 @@ public class GamePanel extends JPanel implements Runnable{
 		
 		
 	}
-	
+	/**
+	 * This stops music.
+	 */
 	public void stopMusic() {
 		
 		music.stop();
 	}
-	
+	/**
+	 * This plays the sound effects.
+	 * @param i the number of the soundURL being constructed.
+	 */
 	public void playSE(int i) {
 		
 		se.setFile(i);

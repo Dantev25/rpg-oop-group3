@@ -7,6 +7,7 @@ import entity.Projectile;
 import main.GamePanel;
 /**
  * This class implements the object Fireball.
+ * This class inherits the Entity Class.
  * @author mrish
  *
  */
