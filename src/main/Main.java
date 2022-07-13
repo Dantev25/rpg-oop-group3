@@ -2,9 +2,24 @@ package main;
 
 import javax.swing.JFrame;
 
+/**
+ * This class implements the JFrame Window.
+ * @author mrish
+ *
+ */
+
 public class Main {
 	
+	/**
+	 * This method constructs the JFrame Window.
+	 */
+	
 	public static JFrame window;
+	
+	/**
+	 * This field sets the features of the new frame.
+	 * @param args
+	 */
 
 	public static void main(String[] args) {
 		
