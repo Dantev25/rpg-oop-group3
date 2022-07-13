@@ -43,21 +43,23 @@ ENTER - attack, talk, cut dry trees
 ### Concept : 
 The Game Scene has one player. To navigate through this scene, a player has to use the arrow keyboard keys. The player has to navigate through the Game scene to find and kill the monsters.
 The more monsters you kill, the more you level up.
+Dead monsters drop random objects.
 ### Characters :
 
 Player :
 
 * Warrior
-* Thief
+* Tank
+* Sorcerer
 
 Monster :
 
 * Slime
-* Wizard
+* Mage
 
-Old Man
+### Non-player Characters:
 
-
+* Old Man
 
 
 ## Authors
