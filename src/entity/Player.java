@@ -155,10 +155,23 @@ public class Player extends Entity{
 		inventory.add(new OBJ_Key(gp));
 	}
 	
+	/**
+	 * This returns the attack value.
+	 * The total attack value is decided by strength and weapon.
+	 * @return this attack value.
+	 */
+	
 	public int getAttack() {
 		attackArea = currentWeapon.attackArea;
 		return attack = strength * currentWeapon.attackValue;
 	}
+	
+	/**
+	 * This returns the defense value.
+	 * The total defense value is decided by dexterity and shield.
+	 * @return this defense value.
+	 */
+	
 	public int getDefense() {
 		return defense = dexterity * currentShield.defenseValue;
 	}
