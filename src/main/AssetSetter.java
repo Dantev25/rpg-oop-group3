@@ -2,7 +2,6 @@ package main;
 
 import entity.NPC_Oldman;
 import monster.MON_GreenSlime;
-import monster.MON_Mage;
 import object.OBJ_Axe;
 import object.OBJ_Coin_Bronze;
 import object.OBJ_Heart;
@@ -13,7 +12,14 @@ import object.OBJ_Shield_Blue;
 import tile_interactive.IT_DryTree;
 import tile_interactive.IT_Trunk;
 
-
+/**
+ * This class implements the objects: bronze coins, axe, blue shield, heart, mana crystal, 
+ * the non-player character: old man, 
+ * the monsters: green slimes and red mages and 
+ * the interactive tile: dry trees and trunk on the map.
+ * @author mrish
+ *
+ */
 public class AssetSetter {
 	
 	GamePanel gp;
@@ -22,7 +28,12 @@ public class AssetSetter {
 		this.gp = gp;
 	}
 		
+	/**
+	 * This method sets the objects bronze coins,axe, blue shield, heart, mana crystal
+	 * on the map.
+	 */
 	public void setObject() {
+		
 		
 		int i = 0;
 		gp.obj[i] = new OBJ_Coin_Bronze(gp);
@@ -61,17 +72,25 @@ public class AssetSetter {
 		i++;
 	}
 	
+	/**
+	 * This method sets the old man non-player character 
+	 * on the map. 
+	 */
+	
 	public void setNPC() {
+		
 		int i = 0;
 		gp.npc[i] = new NPC_Oldman(gp);
 		gp.npc[i].worldX = gp.tileSize * 21;
 		gp.npc[i].worldY = gp.tileSize * 21;
 		i++;
-//		gp.npc[0] = new NPC_Oldman(gp);
-//		gp.npc[0].worldX = gp.tileSize * 9;
-//		gp.npc[0].worldY = gp.tileSize * 10;
-//		
+		
 	}
+	
+	/**
+	 * This method sets the monsters slimes and mages
+	 * on the map. 
+	 */
 	
 	public void setMonster() {
 		int i = 0;
@@ -95,12 +114,14 @@ public class AssetSetter {
 		gp.monster[i].worldX = gp.tileSize * 11;
 		gp.monster[i].worldY = gp.tileSize * 11;
 		i++;
-		gp.monster[i] = new MON_Mage(gp);
-		gp.monster[i].worldX = gp.tileSize * 22;
-		gp.monster[i].worldY = gp.tileSize * 13;
-		i++;
 		
 	}
+	
+
+	/**
+	 * This method sets the dry trees and the trunk
+	 * on the map. 
+	 */
 	
 	public void setInteractiveTile() {
 		
