@@ -14,8 +14,7 @@
 1. [Project Description](#projectdescription)
 2. [Game Instructions](#gameinstructions)
 3. [Game Development and Design](#gamedevelopmentanddesign)
-4. [UML](#uml)
-5. [Authors](#authors)
+4. [Authors](#authors)
  
 ## Project Description
 
@@ -42,7 +41,7 @@ P - pause/resume game
 
 T - telemetry
 
-ENTER - attack monsters, talk to the old man and cut dry trees
+ENTER - attack monsters, talk to the old man, cut dry trees and engage in healing events.
 
 ESCAPE - enter options menu
 
@@ -54,6 +53,7 @@ ESCAPE - enter options menu
 The Game Scene has one player. To navigate through this scene, a player has to use the arrow keyboard keys. The player has to navigate through the Game scene to find and kill the monsters.
 The more monsters you kill, the more you level up.
 Dead monsters drop random objects.
+The player must navigate cautiously as there may be traps(poisonous pits).
 ### Characters :
 
 Player :
