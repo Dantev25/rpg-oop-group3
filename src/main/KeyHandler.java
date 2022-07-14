@@ -131,20 +131,18 @@ public class KeyHandler implements KeyListener{
 					if(gp.ui.commandNum == 0) {
 						playerType = 0;
 						gp.player.updateDefaultValues(playerType);
-						gp.gameState = gp.playState;
-						gp.playMusic(0);
+						gp.ui.titleScreenState = 2;
+						
 					}
 					if(gp.ui.commandNum == 1) {
 						playerType = 1;
 						gp.player.updateDefaultValues(playerType);
-						gp.gameState = gp.playState;
-						gp.playMusic(0);
+						gp.ui.titleScreenState = 2;
 					}
 					if(gp.ui.commandNum == 2) {
 						playerType = 2;
 						gp.player.updateDefaultValues(playerType);
-						gp.gameState = gp.playState;
-						gp.playMusic(0);
+						gp.ui.titleScreenState = 2;
 					}
 					if(gp.ui.commandNum == 3) {
 						gp.ui.titleScreenState = 0;
@@ -153,6 +151,16 @@ public class KeyHandler implements KeyListener{
 				}
 			
 			}
+		else if(gp.ui.titleScreenState == 2) {
+			
+			
+			if(code == KeyEvent.VK_ENTER) {
+				gp.playMusic(0);
+				gp.gameState = gp.playState;
+			
+			}
+		
+		}
 			
 	}
 		/**

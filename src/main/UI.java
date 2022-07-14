@@ -180,7 +180,7 @@ public class UI {
 			
 			// CLASS SELECTION SCREEN
 			g2.setColor(Color.white);
-			g2.setFont(g2.getFont().deriveFont(42F));
+			g2.setFont(g2.getFont().deriveFont(34F));
 			
 			String text = "Select your class!";
 			int x = getXforCenteredText(text);
@@ -188,7 +188,7 @@ public class UI {
 			g2.drawString(text, x, y);
 	
 			
-			text = "Warrior";
+			text = "Warrior (Sword, +atk,-def,1 mana)";
 			x = getXforCenteredText(text);
 			y = gp.tileSize*5;
 			g2.drawString(text, x, y);
@@ -196,7 +196,7 @@ public class UI {
 				g2.drawString(">", x-gp.tileSize, y);
 			}
 			
-			text = "Tank";
+			text = "Tank (Axe,+hp,+def,0 mana)";
 			x = getXforCenteredText(text);
 			y = gp.tileSize*6;
 			g2.drawString(text, x, y);
@@ -204,7 +204,7 @@ public class UI {
 				g2.drawString(">", x-gp.tileSize, y);
 			}
 			
-			text = "Sorcerer";
+			text = "Sorcerer (Fireball,-hp,6 mana)";
 			x = getXforCenteredText(text);
 			y = gp.tileSize*7;
 			g2.drawString(text, x, y);
@@ -220,7 +220,59 @@ public class UI {
 				g2.drawString(">", x-gp.tileSize, y);
 			}
 		}
-		
+		else if(titleScreenState == 2) {
+			g2.setColor(new Color(0,0,0));
+			g2.fillRect(0, 0,  gp.screenWidth, gp.screenHeight);
+			
+			// CLASS SELECTION SCREEN
+			g2.setColor(Color.white);
+			g2.setFont(g2.getFont().deriveFont(24F));
+			
+			String text = "INSTRUCTIONS!";
+			int x = getXforCenteredText(text);
+			int y = gp.tileSize;
+			g2.drawString(text, x, y);
+			
+			text = "W/A/S/D - Movement";
+			x = gp.tileSize;
+			y = gp.tileSize+40;
+			g2.drawString(text, x, y);
+	
+			text = "Enter - Melee";
+			x = gp.tileSize;
+			y = gp.tileSize+80;
+			g2.drawString(text, x, y);
+			
+			text = "F - Projectile";
+			x = gp.tileSize;
+			y = gp.tileSize+120;
+			g2.drawString(text, x, y);
+			
+			text = "C - Inventory";
+			x = gp.tileSize;
+			y = gp.tileSize+160;
+			g2.drawString(text, x, y);
+			
+			text = "T - debug";
+			x = gp.tileSize;
+			y = gp.tileSize+200;
+			g2.drawString(text, x, y);
+			
+			text = "P - Pause/Resume";
+			x = gp.tileSize;
+			y = gp.tileSize+240;
+			g2.drawString(text, x, y);
+			
+			text = "Esc - Options Menu";
+			x = gp.tileSize;
+			y = gp.tileSize+280;
+			g2.drawString(text, x, y);
+			
+			text = "Kill monsters to get EXP. Use keys to open doors and get chests!";
+			x = gp.tileSize;
+			y = gp.tileSize+350;
+			g2.drawString(text, x, y);
+		}
 		
 	}
 	/**
