@@ -40,8 +40,9 @@ public class NPC_Oldman extends Entity{
 		
 		dialogues[0] = "Hello boy. ";
 		dialogues[1] = "So, You've come to this island \nto find treasure?";
-		dialogues[2] = "I used to be a great wizard \nbut now...\nI'm a bit too old for adventuring";
-		dialogues[3] = "Well then, goodluck to you!";
+		dialogues[2] = "There is a pond at the top, \nthat has magical properties\nI hear it heals";
+		dialogues[3] = "Beware though, the monsters around here \nrescuscitate when you use the pond!";
+		dialogues[4] = "Well then, goodluck to you!";
 		
 		
 	}
