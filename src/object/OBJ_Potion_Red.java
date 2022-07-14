@@ -5,13 +5,16 @@ import main.GamePanel;
 /**
  * This class implements the object Red Potion.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_Potion_Red extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for red potion item
+	 * @param gp
+	 */
 	public OBJ_Potion_Red(GamePanel gp) {
 		super(gp);
 		
@@ -23,7 +26,10 @@ public class OBJ_Potion_Red extends Entity{
 		down1 = setup("/objects/potion_red",gp.tileSize, gp.tileSize);
 		description = "[Red Potion]\nHeals your life by " + value + ".";
 	}
-	
+	/**
+	 * method to allow drinking of the potion
+	 * @param entity player using the potion
+	 */
 	public boolean use(Entity entity) {
 		
 		gp.gameState = gp.dialogueState;

@@ -20,53 +20,179 @@ import main.UtilityTool;
 public class Entity {
 	
 	GamePanel gp;
+	/**
+	 * Images of entity during movement
+	 */
 	public BufferedImage up1, up2, down1, down2, left1, left2, right1, right2;
+	/**
+	 * Images of entity during attack
+	 */
 	public BufferedImage attackUp1, attackUp2, attackDown1, attackDown2, attackLeft1, attackLeft2, attackRight1, attackRight2;
+	/**
+	 * token Images of entity 
+	 */
 	public BufferedImage image, image2, image3;
+	/**
+	 * collision area 
+	 */
 	public Rectangle solidArea = new Rectangle(0, 0, 48, 48);
+	/**
+	 * attack area 
+	 */
 	public Rectangle attackArea = new Rectangle(0, 0, 0,0);
+	/**
+	 * default solid areas
+	 */
 	public int solidAreaDefaultX, solidAreaDefaultY;
+	/**
+	 * collision variable
+	 */
 	public boolean collision = false;
+	/**
+	 * string array containing dialogues
+	 */
 	String dialogues[] = new String[20];
 	
 	// STATE
+	/**
+	 * x and y locations
+	 */
 	public int worldX, worldY;
+	/**
+	 * initial direction of entity
+	 */
 	public String direction = "down";
+	/**
+	 * variable to count between image1 and 2 of entities actions
+	 */
 	public int spriteNum = 1;
+	/**
+	 * index counting dialogue
+	 */
 	int dialogueIndex = 0;
+	/**
+	 * variable to see if collision is happening
+	 */
 	public boolean collisionOn = false;
+	/**
+	 * variable to see if an entity is invisible
+	 */
 	public boolean invincible = false;
+	/**
+	 * variable to see if an entity is attacking
+	 */
 	boolean attacking = false;
+	/**
+	 * variable to see if an entity is alive
+	 */
 	public boolean alive = true;
+	/**
+	 * variable to see if an entity is dying
+	 */
 	public boolean dying = false;
+	/**
+	 * variable to see if an entity has his hp bar on
+	 */
 	public boolean hpBarOn = false;
 	
 	// COUNTER
+	/**
+	 * counter for sprites
+	 */
 	public int spriteCounter = 0;
+	/**
+	 * counter for action lock
+	 */
 	public int actionLockCounter = 0;
+	/**
+	 * counter for invincibility frames
+	 */
 	public int invincibleCounter = 0;
+	/**
+	 * counter for projectile shots available
+	 */
 	public int shotAvailableCounter = 0;
+	/**
+	 * counter for dying
+	 */
 	int dyingCounter = 0;
+	/**
+	 * counter for hp bar
+	 */
 	int hpBarCounter = 0;
 	
 	//CHARACTER ATTRIBUTES
+	/**
+	 * Entity name
+	 */
 	public String name;
+	/**
+	 * Entity maximum life
+	 */
 	public int maxLife;
+	/**
+	 * Entity current life
+	 */
 	public int life;
+	/**
+	 * Entity max mana
+	 */
 	public int maxMana;
+	/**
+	 * Entity current mana
+	 */
 	public int mana;
+	/**
+	 * Entity ammo
+	 */
 	public int ammo;
+	/**
+	 * Entity speed
+	 */
 	public int speed;
+	/**
+	 * Entity level
+	 */
 	public int level;
+	/**
+	 * Entity strength
+	 */
 	public int strength;
+	/**
+	 * Entity dexterity
+	 */
 	public int dexterity;
+	/**
+	 * Entity attack
+	 */
 	public int attack;
+	/**
+	 * Entity defense
+	 */
 	public int defense;
+	/**
+	 * Entity experience
+	 */
 	public int exp;
+	/**
+	 * Entity exp to reach next level
+	 */
 	public int nextLevelExp;
+	/**
+	 * Entity number of coins collected 
+	 */
 	public int coin;
+	/**
+	 * Entity's current weapon 
+	 */
 	public Entity currentWeapon;
+	/**
+	 * Entity's current shield
+	 */
 	public Entity currentShield;
+	/**
+	 * Entity's projectile 
+	 */
 	public Projectile projectile;
 	
 	// ITEM ATTRIBUTES
@@ -97,32 +223,55 @@ public class Entity {
  	public Entity (GamePanel gp) {
 		this.gp = gp;
 	}
- 	
+ 	/**
+ 	 * method to get location of left solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getLeftX() {
  		return worldX + solidArea.x;
  	}
- 	
+ 	/**
+ 	 * method to get location of right solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getRightX() {
  		return worldX +solidArea.x + solidArea.width;
  	}
- 	
+ 	/**
+ 	 * method to get location of top solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getTopY() {
  		return worldY +solidArea.y;
  	}
-	
+ 	/**
+ 	 * method to get location of bottom solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getBottomY() {
  		return worldY +solidArea.y + solidArea.height;
  	}
- 	
+ 	/**
+ 	 * method to get X location of solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getCol() {
  		return (worldX + solidArea.x)/gp.tileSize;
  	}
- 	
+ 	/**
+ 	 * method to get Y location of solid area of entity
+ 	 * @return location of edge of solid area
+ 	 */
  	public int getRow() {
  		return (worldY + solidArea.y)/gp.tileSize;
  	}
- 	
+ 	/**
+ 	 * superclass entity method to define actions of entities
+ 	 */
 	public void setAction() {}
+	/**
+ 	 * superclass entity method to define damage reactions of entities
+ 	 */
 	public void damageReaction() {}
 	/**
 	 * handles speech with npc's
@@ -452,7 +601,7 @@ public class Entity {
     	int col = nextWorldX/gp.tileSize;
     	int row = nextWorldY/gp.tileSize;
     	
-    	for(int i=0;i<target[1].length;i++) {
+    	for(int i=0;i<target.length;i++) {
     		if(target[i] != null) {
     			if(target[i].getCol() == col && target[i].getRow() == row &&
     					target[i].name.equals(targetName)) {

@@ -5,13 +5,16 @@ import main.GamePanel;
 /**
  * This class implements the object Bronze coin.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_Coin_Bronze extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for item bronze coin
+	 * @param gp
+	 */
 	public OBJ_Coin_Bronze(GamePanel gp) {
 		
 		super(gp);
@@ -22,7 +25,9 @@ public class OBJ_Coin_Bronze extends Entity{
 		value = 1;
 		down1 = setup("/objects/coin_bronze",gp.tileSize,gp.tileSize);
 	}
-	
+	/**
+	 * method to increase player coin when pickup
+	 */
     public boolean use(Entity entity) {
 		
 		gp.playSE(1);

@@ -1,15 +1,28 @@
 package main;
 
 import entity.Entity;
-
+/**
+ * class to check collision between entities, objects and tiles
+ * @author mrish
+ * @author Oomar
+ * @author Sadiyah
+ * 
+ */
 public class CollisionChecker {
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor
+	 * @param gp - gamepanel
+	 */
 	public CollisionChecker(GamePanel gp) {
 		this.gp = gp;
 	}
 	
+	/**
+	 * method to check collision between entity and tile
+	 * @param entity object of type entity to check collision with
+	 */
 	public void checkTile(Entity entity) {
 		
 		int entityLeftWorldX = entity.worldX + entity.solidArea.x;
@@ -57,6 +70,13 @@ public class CollisionChecker {
 			break;
 		}
 	}
+	
+	 /**
+	 * method to check collision between entity and player
+	 * @param entity object of type entity to check collision with either player or object
+	 * @param player true if player is checking the collision with entity
+	 * @return
+	 */
 	public int checkObject(Entity entity, boolean player) {
 	
 		int index = 999; 
@@ -98,6 +118,12 @@ public class CollisionChecker {
 		return index;
 	}
 	//NPC && MONSTER COLLISION
+	/**
+	 * NPC && MONSTER COLLISION
+	 * @param entity entity in question (either npc or monster)
+	 * @param target target entity(monster or npc)
+	 * @return
+	 */
 	public int checkEntity(Entity entity, Entity[] target) {
 		int index = 999; 
 		
@@ -136,7 +162,11 @@ public class CollisionChecker {
 		}
 		return index;
 	}
-	
+	/**
+	 * checks collision with solid area of player
+	 * @param entity entity checking collision with player
+	 * @return return true if contact with player is made
+	 */
 	public boolean checkPlayer(Entity entity) {
 		
 		boolean contactPlayer = false;

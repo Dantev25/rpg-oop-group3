@@ -6,15 +6,24 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
+/**
+ * allows saves and loads of volume, and full screen mode
+ * @author Sadiyah
+ *
+ */
 public class Config {
 	
 	GamePanel gp;
-	
+	/**
+	 * class constructor
+	 * @param gp - gamepanel
+	 */
 	public Config(GamePanel gp) {
 		this.gp = gp;
 	}
-	
+	/**
+	 * method to save settings
+	 */
 	public void saveConfig() {
 		
 		try {
@@ -46,6 +55,9 @@ public class Config {
 		}
 	}
 	
+	/**
+	 * method to load settings
+	 */
 	public void loadConfig() {
 
 		try {

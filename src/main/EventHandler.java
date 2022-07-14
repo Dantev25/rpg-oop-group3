@@ -58,8 +58,8 @@ public class EventHandler {
 		}
 		if(canTouchEvent == true) {
 			if(hit(27,16,"right") == true) {damagePit(27,16,gp.dialogueState);}
-			if(hit(23,19,"any") == true) {damagePit(23,19,gp.dialogueState);}
-			if(hit(28,12,"up") == true) {healingPool(28,12,gp.dialogueState);}
+			if(hit(23,23,"any") == true) {damagePit(23,23,gp.dialogueState);}
+			if(hit(30,12,"up") == true) {healingPool(30,12,gp.dialogueState);}
 		}
 		
 	}

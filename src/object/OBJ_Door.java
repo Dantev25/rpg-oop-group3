@@ -6,12 +6,15 @@ import main.GamePanel;
  * This class implements the object Door.
  * This class inherits the Entity Class.
  * @author mrish
- *
+ * @author Sadiyah
  */
 public class OBJ_Door extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for obstacle door
+	 * @param gp - gamepanel
+	 */
 	public OBJ_Door(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
@@ -28,7 +31,9 @@ public class OBJ_Door extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 	}
-	
+	/**
+	 * method to handle interaction with door if there are no keys
+	 */
 	public void interact() {
 		gp.gameState = gp.dialogueState;
 		gp.ui.currentDialogue = "You need a key to open the door.";

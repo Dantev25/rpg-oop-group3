@@ -5,13 +5,16 @@ import main.GamePanel;
 /**
  * This class implements the object Mana Crystal.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_ManaCrystal extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for mana crystal item
+	 * @param gp gamepanel
+	 */
 	public OBJ_ManaCrystal(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
@@ -24,7 +27,9 @@ public class OBJ_ManaCrystal extends Entity{
 		image2 = setup("/objects/manacrystal_blank",32,32);
 		
 	}
-	
+	/**
+	 * method to increment mana when pickup mana crystal
+	 */
     public boolean use(Entity entity) {
 		
 		gp.playSE(2);

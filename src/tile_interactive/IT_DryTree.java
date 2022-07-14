@@ -7,7 +7,7 @@ import main.GamePanel;
 /**
  * This class implements the Interactive Tile Dry Tree
  * This class inherits the class Interactive Tile
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class IT_DryTree extends InteractiveTile{
@@ -26,6 +26,10 @@ public class IT_DryTree extends InteractiveTile{
 		life = 3;
 		
 	}
+	/**
+	 * method checks if entity is holding the correct weapon type to cut the tree
+	 * @return true if correct weapon type
+	 */
 	public boolean isCorrectItem(Entity entity) {
 		boolean isCorrectItem = false;
 		
@@ -49,28 +53,28 @@ public class IT_DryTree extends InteractiveTile{
 		return tile;
 	}
 	/**
-	 * This returns the Particle color.
+	 * This gets the Particle color.
 	 */
 	public Color getParticleColor() {
 		Color color = new Color(65,50,30);
 		return color;
 	}
 	/**
-	 * This returns the Particle size.
+	 * This gets the Particle size.
 	 */
 	public int getParticleSize() {
 		int size = 6; // 6 pixels
 		return size;
 	}
 	/**
-	 * This returns the Particle speed.
+	 * This gets the Particle speed.
 	 */
 	public int getParticleSpeed() {
 		int speed = 1;
 		return speed;
 	}
 	/**
-	 * This returns the Particle maximum life.
+	 * This gets the Particle maximum life.
 	 */
 	public int getParticleMaxLife() {
 		int maxLife = 20;

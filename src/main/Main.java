@@ -5,7 +5,8 @@ import javax.swing.JFrame;
 /**
  * This class implements the JFrame Window.
  * @author mrish
- *
+ * @author Oomar
+ * @author Sadiyah
  */
 
 public class Main {

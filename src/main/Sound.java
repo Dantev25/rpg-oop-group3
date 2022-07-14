@@ -8,8 +8,9 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 /**
  * This implements the sounds of the added audio files.
- * @author mrish
- *
+ * @author Oomar
+ * @author Sadiyah
+ * @author Mrish
  */
 public class Sound {
 	
@@ -41,7 +42,7 @@ public class Sound {
 	/**
 	 * This opens the audio file. 
 	 * It obtains an audio input stream from the URL provided.
-	 * @param i the number of the soundURL being constructed.
+	 * @param i the index of the soundURL being constructed.
 	 */
 	public void setFile(int i) {
 			try {

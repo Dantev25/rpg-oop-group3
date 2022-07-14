@@ -5,13 +5,16 @@ import main.GamePanel;
 /**
  * This class implements the object Heart.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_Heart extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for item heart
+	 * @param gp gamepanel
+	 */
 	public OBJ_Heart(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
@@ -25,7 +28,9 @@ public class OBJ_Heart extends Entity{
 		image3 = setup("/objects/heart_blank", gp.tileSize/2, gp.tileSize/2);
 		
 	}
-	
+	/**
+	 * method to increment playerlife when picking up a heart
+	 */
 	public boolean use(Entity entity) {
 		
 		gp.playSE(2);

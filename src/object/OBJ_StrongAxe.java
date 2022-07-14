@@ -5,16 +5,19 @@ import main.GamePanel;
 /**
  * This class implements the object Strong Axe.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Oomar
  *
  */
 public class OBJ_StrongAxe extends Entity{
-	
+	/**
+	 * constructor for weapon strong axe
+	 * @param gp
+	 */
 	public OBJ_StrongAxe(GamePanel gp) {
 		super(gp);
 		
 		type = type_axe;
-		name = "Fighter's Axe";
+		name = "Strong Axe";
 		down1 = setup("/objects/strongaxe",gp.tileSize,gp.tileSize);
 		attackValue = 2;
 		attackArea.width = 30;

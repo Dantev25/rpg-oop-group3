@@ -4,11 +4,17 @@ import main.GamePanel;
 /**
  * This class implements the Interactive Tile Trunk
  * This class inherits the class Interactive Tile
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class IT_Trunk extends InteractiveTile{
 	
+		/**
+		 * constructor for interactive tile trunk
+		 * @param gp gamepanel
+		 * @param col x location 
+		 * @param row y location
+		 */
 		public IT_Trunk(GamePanel gp, int col, int row) {
 		super(gp,col,row);
 		this.gp = gp;

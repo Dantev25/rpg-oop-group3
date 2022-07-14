@@ -1,6 +1,5 @@
 package tile_interactive;
 
-import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
@@ -9,7 +8,7 @@ import main.GamePanel;
 /**
  * This class implements the Interactive Tile 
  * This class inherits the class Entity.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class InteractiveTile extends Entity{
@@ -52,7 +51,8 @@ public class InteractiveTile extends Entity{
 		}
 	}
 	/**
-	 * This returns the 2D graphics
+	 * This method draws the interactive tile onto the screen
+	 * @param g2 graphics object to display the tile
 	 */
 	public void draw(Graphics2D g2) {
 		BufferedImage image = null;

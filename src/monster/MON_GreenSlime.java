@@ -17,6 +17,10 @@ import object.OBJ_Rock;
 public class MON_GreenSlime extends Entity{
 
 	GamePanel gp;
+	/**
+	 * constructor for monster green slime
+	 * @param gp
+	 */
 	public MON_GreenSlime(GamePanel gp) {
 		super(gp);
 		
@@ -27,7 +31,7 @@ public class MON_GreenSlime extends Entity{
 		speed = 1;
 		maxLife = 8;
 		life = maxLife;
-		attack = 4;
+		attack = 5;
 		defense = 0;
 		exp = 5;
 		projectile = new OBJ_Rock(gp);
@@ -42,7 +46,7 @@ public class MON_GreenSlime extends Entity{
 		getImage();
 	}
 	/**
-	 * This returns monster green slime image.
+	 * This sets monster green slime image.
 	 */
 	public void getImage() {
 		
@@ -58,7 +62,7 @@ public class MON_GreenSlime extends Entity{
 		
 	}
 	/**
-	 * This returns monster green slime random movements.
+	 * This sets monster green slime random movements.
 	 */
 	public void setAction() {
 		actionLockCounter++;	
@@ -94,7 +98,7 @@ public class MON_GreenSlime extends Entity{
 		
 	}
 	/**
-	 * This returns monster green slime damage reaction
+	 * This sets monster green slime damage reaction
 	 */
 	public void damageReaction () {
 		
@@ -102,7 +106,7 @@ public class MON_GreenSlime extends Entity{
 		direction = gp.player.direction;
 	}
 	/**
-	 * This returns monster green slime random item drop when killed.
+	 * This generates monster green slime random item drop when killed.
 	 */
 	public void checkDrop() {
 		
@@ -110,11 +114,11 @@ public class MON_GreenSlime extends Entity{
 		int i = new Random().nextInt(100)+1;
 		
 		// SET THE MONSTER DROP
-		if(i<50) {
+		if(i<35) {
 			dropItem(new OBJ_Coin_Bronze(gp));
 		}
 		
-		if(i >= 50 && i < 75) {
+		if(i >= 35 && i < 75) {
 			dropItem(new OBJ_Heart(gp));
 		}
 		

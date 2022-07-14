@@ -2,6 +2,7 @@ package main;
 
 import entity.NPC_Oldman;
 import monster.MON_GreenSlime;
+import monster.MON_Mage;
 import object.OBJ_Axe;
 import object.OBJ_Chest;
 import object.OBJ_Coin_Bronze;
@@ -27,7 +28,10 @@ import tile_interactive.IT_Trunk;
 public class AssetSetter {
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for class asset setter
+	 * @param gp gamepanel
+	 */
 	public AssetSetter(GamePanel gp) {
 		this.gp = gp;
 	}
@@ -47,7 +51,7 @@ public class AssetSetter {
 		
 		gp.obj[i] = new OBJ_Coin_Bronze(gp);
 		gp.obj[i].worldX = gp.tileSize*25;
-		gp.obj[i].worldY = gp.tileSize*19;
+		gp.obj[i].worldY = gp.tileSize*20;
 		i++;
 		
 		gp.obj[i] = new OBJ_Coin_Bronze(gp);
@@ -60,10 +64,6 @@ public class AssetSetter {
 		gp.obj[i].worldY = gp.tileSize*21;
 		i++;
 		
-		gp.obj[i] = new OBJ_Shield_Blue(gp);
-		gp.obj[i].worldX = gp.tileSize*39;
-		gp.obj[i].worldY = gp.tileSize*21;
-		i++;
 		
 		gp.obj[i] = new OBJ_Heart(gp);
 		gp.obj[i].worldX = gp.tileSize*30;
@@ -76,16 +76,16 @@ public class AssetSetter {
 		i++;
 		
 		gp.obj[i] = new OBJ_Door(gp);
-		gp.obj[i].worldX = gp.tileSize*14;
+		gp.obj[i].worldX = gp.tileSize*21;
 		gp.obj[i].worldY = gp.tileSize*28;
 		i++;
 		
 		gp.obj[i] = new OBJ_Door(gp);
-		gp.obj[i].worldX = gp.tileSize*12;
+		gp.obj[i].worldX = gp.tileSize*17;
 		gp.obj[i].worldY = gp.tileSize*12;
 		i++;
 		
-		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Key(gp));
+		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Shield_Blue(gp));
 		gp.obj[i].worldX = gp.tileSize*34;
 		gp.obj[i].worldY = gp.tileSize*16;
 		i++;
@@ -121,16 +121,20 @@ public class AssetSetter {
 		gp.monster[i].worldX = gp.tileSize * 27;
 		gp.monster[i].worldY = gp.tileSize * 37;
 		i++;
+		gp.monster[i] = new MON_Mage(gp);
+		gp.monster[i].worldX = gp.tileSize * 28;
+		gp.monster[i].worldY = gp.tileSize * 37;
+		i++;
 		gp.monster[i] = new MON_GreenSlime(gp);
 		gp.monster[i].worldX = gp.tileSize * 25;
 		gp.monster[i].worldY = gp.tileSize * 22;
 		i++;
 		gp.monster[i] = new MON_GreenSlime(gp);
-		gp.monster[i].worldX = gp.tileSize * 15;
+		gp.monster[i].worldX = gp.tileSize * 17;
 		gp.monster[i].worldY = gp.tileSize * 10;
 		i++;
 		gp.monster[i] = new MON_GreenSlime(gp);
-		gp.monster[i].worldX = gp.tileSize * 15;
+		gp.monster[i].worldX = gp.tileSize * 17;
 		gp.monster[i].worldY = gp.tileSize * 11;
 		i++;
 		

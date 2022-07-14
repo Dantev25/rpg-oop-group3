@@ -6,12 +6,15 @@ import main.GamePanel;
  * This class implements the object Key.
  * This class inherits the Entity Class.
  * @author mrish
- *
+ * @author Sadiyah
  */
 public class OBJ_Key extends Entity{
 	
 	GamePanel gp;
-	
+	/**
+	 * constructor for item key
+	 * @param gp
+	 */
 	public OBJ_Key(GamePanel gp) {
 		super(gp);
 		this.gp = gp;
@@ -22,7 +25,10 @@ public class OBJ_Key extends Entity{
 		description = "[" + name + "]\nIt opens the door.";
 		
 	}
-	
+	/**
+	 * method allowing player to use the key on a door
+	 * @param entity player using the key
+	 */
 	public boolean use(Entity entity) {
 		gp.gameState = gp.dialogueState;
 		

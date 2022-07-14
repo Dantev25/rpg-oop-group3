@@ -5,10 +5,14 @@ import main.GamePanel;
 /**
  * This class implements the object No Weapon.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Oomar
  *
  */
 public class OBJ_NoWep extends Entity{
+	/**
+	 * constructor for no weapon
+	 * @param gp - gamepanel
+	 */
 	public OBJ_NoWep(GamePanel gp){
 		super(gp);
 		

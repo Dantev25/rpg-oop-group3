@@ -6,7 +6,7 @@ import main.GamePanel;
 /**
  * This class implements the non-player character old man.
  * This class inherits the Entity class.
- * @author mrish
+ * @author Oomar
  *
  */
 public class NPC_Oldman extends Entity{
@@ -20,7 +20,7 @@ public class NPC_Oldman extends Entity{
 		setDialogue();
 	}
 	/**
-	 * This returns non-player character old man image.
+	 * This loads non-player character old man image.
 	 */
 	public void getImage() {
 		
@@ -34,7 +34,7 @@ public class NPC_Oldman extends Entity{
 		left2 = setup("/npc/oldman_left_2", gp.tileSize, gp.tileSize);
 	}
 	/**
-	 * This returns non-player character old man dialogues.
+	 * This sets non-player character old man dialogues.
 	 */
 	public void setDialogue() {
 		
@@ -47,7 +47,7 @@ public class NPC_Oldman extends Entity{
 	}
 	
 	/**
-	 * This returns non-player character old man random movements.
+	 * This generates non-player character old man random movements.
 	 */
 	public void setAction() {
 		
@@ -75,7 +75,7 @@ public class NPC_Oldman extends Entity{
 		
 	}
 	/**
-	 * This returns non-player character old man to speak.
+	 * This method allows non-player character old man to speak to player.
 	 */
 	public void speak() {
 		

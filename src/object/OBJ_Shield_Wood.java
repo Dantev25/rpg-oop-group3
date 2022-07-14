@@ -9,7 +9,10 @@ import main.GamePanel;
  *
  */
 public class OBJ_Shield_Wood extends Entity{
-	
+	/**
+	 * constructor for shield wood shield
+	 * @param gp gamepanel
+	 */
 	public OBJ_Shield_Wood(GamePanel gp) {
 		super(gp);
 		

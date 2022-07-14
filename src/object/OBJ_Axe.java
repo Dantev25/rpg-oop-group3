@@ -5,11 +5,14 @@ import main.GamePanel;
 /**
  * This class implements the object Axe.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_Axe extends Entity{
-	
+	/**
+	 * constructor for weapon axe
+	 * @param gp gamepanel
+	 */
 	public OBJ_Axe(GamePanel gp) {
 		super(gp);
 		

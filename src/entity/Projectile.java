@@ -5,7 +5,7 @@ import main.GamePanel;
 /**
  * This class implements the projectile.
  * This class inherits the Entity class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 
@@ -13,14 +13,21 @@ public class Projectile extends Entity{
 	
 	Entity user;
 	/**
-	 * This constructs the Projectile
+	 * This constructs the class Projectile
 	 * @param gp this game panel
 	 */
 	public Projectile(GamePanel gp) {
 		super(gp);
 		
 	}
-	
+	/**
+	 * setter for projectile object
+	 * @param worldX x location
+	 * @param worldY y location
+	 * @param direction direction of movement of projectile
+	 * @param alive if the projectile is still alive
+	 * @param user the entity that sent the projectile
+	 */
 	public void set(int worldX, int worldY, String direction, boolean alive, Entity user) {
 		
 		this.worldX = worldX;
@@ -30,7 +37,10 @@ public class Projectile extends Entity{
 		this.user = user;
 		this.life = this.maxLife;
 	}
-	
+	/**
+	 * this method updates the damage given to either monster or player, and 
+	 * also takes care of the image to be displayed for projectile
+	 */
 	public void update() {
 		
 		if(user == gp.player) {
@@ -74,13 +84,20 @@ public class Projectile extends Entity{
 			spriteCounter = 0;
 		}
 	}
-	
+	/**
+	 * method to initialise user resource as false
+	 * @param user entity using the projectile
+	 * @return returns the user as having no resources
+	 */
     public boolean haveResource(Entity user) {
 		
 		boolean haveResource = false;
 		return haveResource;
 	}
-    
+    /**
+     * method to subtract resources from user's stack
+     * @param user entity having the resource
+     */
     public void subtractResource(Entity user) {
     	
 	}

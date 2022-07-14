@@ -10,11 +10,15 @@ import object.OBJ_ManaCrystal;
 /**
  * This class implements the monster mage.
  * This class inherits the Entity class.
- * @author mrish
+ * @author Oomar
  *
  */
 public class MON_Mage extends Entity{
 	GamePanel gp;
+	/**
+	 * constructor for mage
+	 * @param gp gamepanel
+	 */
 	public MON_Mage(GamePanel gp) {
 		super(gp);
 		
@@ -29,7 +33,7 @@ public class MON_Mage extends Entity{
 		defense = 0;
 		exp = 10;
 		projectile = new OBJ_Fireball(gp);
-		
+		projectile.attack = 10;
 		solidArea.x = 8;
 		solidArea.y = 16;
 		solidArea.width = 28;
@@ -40,9 +44,8 @@ public class MON_Mage extends Entity{
 		getImage();
 }
 	/**
-	 * This returns monster mage image.
+	 * This sets monster mage image.
 	 */
-	
 	public void getImage() {
 		
 		up1 = setup("/monster/mage_down_1", gp.tileSize, gp.tileSize);
@@ -57,7 +60,7 @@ public class MON_Mage extends Entity{
 		
 	}
 	/**
-	 * This returns monster mage random movements.
+	 * This sets monster mage random movements.
 	 */
 	public void setAction() {
 		actionLockCounter++;	
@@ -93,7 +96,7 @@ public class MON_Mage extends Entity{
 		
 	}
 	/**
-	 * This returns monster mage damage reaction
+	 * This sets monster mage damage reaction
 	 */
 	public void damageReaction () {
 		
@@ -101,7 +104,7 @@ public class MON_Mage extends Entity{
 		direction = gp.player.direction;
 	}
 	/**
-	 * This returns monster mage random item drop when killed.
+	 * This generates monster mage random item drop when killed.
 	 */
 	public void checkDrop() {
 		
@@ -109,15 +112,15 @@ public class MON_Mage extends Entity{
 		int i = new Random().nextInt(100)+1;
 		
 		// SET THE MONSTER DROP
-		if(i<50) {
+		if(i<25) {
 			dropItem(new OBJ_Coin_Bronze(gp));
 		}
 		
-		if(i >= 50 && i < 75) {
+		if(i >= 25 && i < 60) {
 			dropItem(new OBJ_Heart(gp));
 		}
 		
-		if(i >= 75 && i < 100) {
+		if(i >= 60 && i < 100) {
 			dropItem(new OBJ_ManaCrystal(gp));
 		}
 	}

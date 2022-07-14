@@ -9,7 +9,10 @@ import main.GamePanel;
  *
  */
 public class OBJ_Sword_Normal extends Entity {
-	
+	/**
+	 * constructor for weapon normal sword
+	 * @param gp - gamepanel object
+	 */
 	public OBJ_Sword_Normal(GamePanel gp) {
 		super(gp);
 		

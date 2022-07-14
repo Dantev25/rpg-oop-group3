@@ -5,11 +5,14 @@ import main.GamePanel;
 /**
  * This class implements the object Blue Shield.
  * This class inherits the Entity Class.
- * @author mrish
+ * @author Sadiyah
  *
  */
 public class OBJ_Shield_Blue extends Entity {
-	
+	/**
+	 * constructor for shield blue shield
+	 * @param gp gamepanel object
+	 */
 	public OBJ_Shield_Blue(GamePanel gp) {
 		super(gp);
 		

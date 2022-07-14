@@ -5,6 +5,7 @@ import main.GamePanel;
 /**
  * This class implements the object Chest.
  * This class inherits the Entity Class.
+ * @author Sadiyah
  * @author mrish
  *
  */
@@ -13,7 +14,11 @@ public class OBJ_Chest extends Entity{
 	GamePanel gp;
 	Entity loot;
 	boolean opened = false;
-	
+	/**
+	 * constructor for chest
+	 * @param gp - gamepanel
+	 * @param loot - contained loot inside the chest
+	 */
 	public OBJ_Chest(GamePanel gp, Entity loot) {
 		super(gp);
 		this.gp = gp;
@@ -33,7 +38,9 @@ public class OBJ_Chest extends Entity{
 		solidAreaDefaultX = solidArea.x;
 		solidAreaDefaultY = solidArea.y;
 	}
-	
+	/**
+	 * method to allow interaction with a chest
+	 */
 	public void interact() {
 		gp.gameState = gp.dialogueState;
 		if(opened == false) {

@@ -2,7 +2,13 @@ package main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-
+/**
+ * 
+ * class to allow keyboard input and handle cursor/player movements
+ * @author Oomar
+ * @author Sadiyah
+ * @author Mrish
+ */
 public class KeyHandler implements KeyListener{
 	
 	GamePanel gp;
@@ -10,7 +16,10 @@ public class KeyHandler implements KeyListener{
 	public int playerType;
 	//DEBUG
 	boolean showDebugText = false;
-	
+	/**
+	 * constructor
+	 * @param gp gamepanel
+	 */
 	public KeyHandler(GamePanel gp) {
 		this.gp = gp;
 		
@@ -23,6 +32,9 @@ public class KeyHandler implements KeyListener{
 	
 	}
 
+	/**
+	 * method to input the keys pressed into each game state
+	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
 		
@@ -63,6 +75,11 @@ public class KeyHandler implements KeyListener{
 		}
 	}
 		
+	/**
+	 * method to navigate title state
+	 * also handles navigation through character class choice
+	 * @param code - numeric value of key pressed
+	 */
 		public void titleState(int code) {
 			
 			if(gp.ui.titleScreenState == 0) {
@@ -138,6 +155,16 @@ public class KeyHandler implements KeyListener{
 			}
 			
 	}
+		/**
+		 * method to move and do player specific actions using certain keys
+		 * w/a/s/d move
+		 * p pause
+		 * t telemetry
+		 * c character stats
+		 * enter npc dialogue engage/attack/engage event
+		 * f shoot projectile(mage and warrior only)
+		 * @param code - numeric value of key pressed
+		 */
 		public void playState(int code) {
 			
 			if(code == KeyEvent.VK_W) {
@@ -200,7 +227,10 @@ public class KeyHandler implements KeyListener{
 				gp.tileM.loadMap("/maps/worldV2.txt");
 			}
 		}
-		
+		/**
+		 * method to enter pause state
+		 * @param code - numeric value of key pressed
+		 */
 		public void pauseState(int code) {
 			
 			if(code == KeyEvent.VK_P) {
@@ -209,14 +239,20 @@ public class KeyHandler implements KeyListener{
 			
 			}
 		}
-		
+		/**
+		 * method to enter dialogue state
+		 * @param code - numeric value of key pressed
+		 */
 		public void dialogueState(int code) {
 			
 			if(code == KeyEvent.VK_ENTER) {
 				gp.gameState = gp.playState;
 			}
 		}
-		
+		/**
+		 * method to enter and navigate character inventory/stats screen
+		 * @param code - numeric value of key pressed
+		 */
 		public void characterState(int code) {
 			
 			if(code == KeyEvent.VK_C) {
@@ -256,6 +292,10 @@ public class KeyHandler implements KeyListener{
             }
 	}
 		
+		/**
+		 * method to enter option menu and navigate through choices
+		 * @param code - numeric value of key pressed
+		 */
 	public void optionsState(int code) {
 		
 		if(code == KeyEvent.VK_ESCAPE) {
@@ -316,7 +356,10 @@ public class KeyHandler implements KeyListener{
 			}
 		}
 	}
-	
+	/**
+	 * method to navigate through game over screen
+	 * @param code - numeric value of key pressed
+	 */
 	public void gameOverState(int code) {
 		
 		if(code == KeyEvent.VK_W) {
@@ -346,7 +389,10 @@ public class KeyHandler implements KeyListener{
 			}
 		}
 	}
-
+	/**
+	 * method to check whether a key has been released or not
+	 * @param e object of type KeyEvent allowing keyboard input
+	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
 		int code = e.getKeyCode();
