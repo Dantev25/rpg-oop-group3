@@ -58,26 +58,84 @@ public class AssetSetter {
 		gp.obj[i].worldX = gp.tileSize*31;
 		gp.obj[i].worldY = gp.tileSize*21;
 		i++;
-		
-		gp.obj[i] = new OBJ_Axe(gp);
-		gp.obj[i].worldX = gp.tileSize*38;
-		gp.obj[i].worldY = gp.tileSize*21;
-		i++;
-		
+	
 		
 		gp.obj[i] = new OBJ_Heart(gp);
 		gp.obj[i].worldX = gp.tileSize*30;
 		gp.obj[i].worldY = gp.tileSize*29;
 		i++;
 		
+		gp.obj[i] = new OBJ_Potion_Red(gp);
+		gp.obj[i].worldX = gp.tileSize*40;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		
+		gp.obj[i] = new OBJ_Potion_Red(gp);
+		gp.obj[i].worldX = gp.tileSize*17;
+		gp.obj[i].worldY = gp.tileSize*17;
+		i++;
+		
+		gp.obj[i] = new OBJ_Potion_Red(gp);
+		gp.obj[i].worldX = gp.tileSize*37;
+		gp.obj[i].worldY = gp.tileSize*40;
+		i++;
+		
+		
+		gp.obj[i] = new OBJ_Heart(gp);
+		gp.obj[i].worldX = gp.tileSize*37;
+		gp.obj[i].worldY = gp.tileSize*37;
+		i++;
+		
+		gp.obj[i] = new OBJ_Heart(gp);
+		gp.obj[i].worldX = gp.tileSize*27;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*28;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*30;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*31;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*32;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*29;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
+		gp.obj[i] = new OBJ_Heart(gp);
+		gp.obj[i].worldX = gp.tileSize*33;
+		gp.obj[i].worldY = gp.tileSize*7;
+		i++;
 		gp.obj[i] = new OBJ_ManaCrystal(gp);
 		gp.obj[i].worldX = gp.tileSize*30;
 		gp.obj[i].worldY = gp.tileSize*31;
 		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*42;
+		gp.obj[i].worldY = gp.tileSize*42;
+		i++;
+	
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*44;
+		gp.obj[i].worldY = gp.tileSize*25;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*44;
+		gp.obj[i].worldY = gp.tileSize*26;
+		i++;
+		
 		
 		gp.obj[i] = new OBJ_Door(gp);
-		gp.obj[i].worldX = gp.tileSize*21;
-		gp.obj[i].worldY = gp.tileSize*28;
+		gp.obj[i].worldX = gp.tileSize*32;
+		gp.obj[i].worldY = gp.tileSize*16;
 		i++;
 		
 		gp.obj[i] = new OBJ_Door(gp);
@@ -85,9 +143,31 @@ public class AssetSetter {
 		gp.obj[i].worldY = gp.tileSize*12;
 		i++;
 		
-		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Shield_Blue(gp));
-		gp.obj[i].worldX = gp.tileSize*34;
+		gp.obj[i] = new OBJ_Door(gp);
+		gp.obj[i].worldX = gp.tileSize*21;
+		gp.obj[i].worldY = gp.tileSize*26;
+		i++;
+		
+		
+		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Axe(gp));
+		gp.obj[i].worldX = gp.tileSize*39;
 		gp.obj[i].worldY = gp.tileSize*16;
+		i++;
+		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Key(gp));
+		gp.obj[i].worldX = gp.tileSize*20;
+		gp.obj[i].worldY = gp.tileSize*39;
+		i++;
+		gp.obj[i] = new OBJ_ManaCrystal(gp);
+		gp.obj[i].worldX = gp.tileSize*35;
+		gp.obj[i].worldY = gp.tileSize*12;
+		i++;
+		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Key(gp));
+		gp.obj[i].worldX = gp.tileSize*33;
+		gp.obj[i].worldY = gp.tileSize*32;
+		i++;
+		gp.obj[i] = new OBJ_Chest(gp, new OBJ_Shield_Blue(gp));
+		gp.obj[i].worldX = gp.tileSize*17;
+		gp.obj[i].worldY = gp.tileSize*8;
 		i++;
 	}
 	
@@ -125,18 +205,45 @@ public class AssetSetter {
 		gp.monster[i].worldX = gp.tileSize * 28;
 		gp.monster[i].worldY = gp.tileSize * 37;
 		i++;
-		gp.monster[i] = new MON_GreenSlime(gp);
-		gp.monster[i].worldX = gp.tileSize * 25;
-		gp.monster[i].worldY = gp.tileSize * 22;
-		i++;
-		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i] = new MON_Mage(gp);
 		gp.monster[i].worldX = gp.tileSize * 17;
 		gp.monster[i].worldY = gp.tileSize * 10;
 		i++;
-		gp.monster[i] = new MON_GreenSlime(gp);
-		gp.monster[i].worldX = gp.tileSize * 17;
-		gp.monster[i].worldY = gp.tileSize * 11;
+		
+		gp.monster[i] = new MON_Mage(gp);
+		gp.monster[i].worldX = gp.tileSize * 47;
+		gp.monster[i].worldY = gp.tileSize * 8;
 		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 45;
+		gp.monster[i].worldY = gp.tileSize * 7;
+		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 43;
+		gp.monster[i].worldY = gp.tileSize * 8;
+		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 36;
+		gp.monster[i].worldY = gp.tileSize * 34;
+		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 21;
+		gp.monster[i].worldY = gp.tileSize * 34;
+		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 19;
+		gp.monster[i].worldY = gp.tileSize * 34;
+		i++;
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 15;
+		gp.monster[i].worldY = gp.tileSize * 19;
+		i++;
+		
+		gp.monster[i] = new MON_GreenSlime(gp);
+		gp.monster[i].worldX = gp.tileSize * 44;
+		gp.monster[i].worldY = gp.tileSize * 40;
+		i++;
+		
 		
 	}
 	
@@ -149,14 +256,12 @@ public class AssetSetter {
 	public void setInteractiveTile() {
 		
 		int i = 0;
-		gp.iTile[i] = new IT_DryTree(gp,31,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,32,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,33,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,34,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,35,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,36,12);i++;
-		gp.iTile[i] = new IT_DryTree(gp,37,12);i++;
-		gp.iTile[i] = new IT_Trunk(gp,34,22);i++;
+		
+		
+		gp.iTile[i] = new IT_DryTree(gp,38,12);i++;
+		gp.iTile[i] = new IT_DryTree(gp,39,12);i++;
+		gp.iTile[i] = new IT_DryTree(gp,40,12);i++;
+		gp.iTile[i] = new IT_DryTree(gp,34,22);i++;
 		gp.iTile[i] = new IT_DryTree(gp,34,20);i++;
 		gp.iTile[i] = new IT_DryTree(gp,34,21);i++;
 		gp.iTile[i] = new IT_DryTree(gp,24,20);i++;
@@ -165,6 +270,11 @@ public class AssetSetter {
 		gp.iTile[i] = new IT_DryTree(gp,26,24);i++;
 		gp.iTile[i] = new IT_DryTree(gp,27,24);i++;
 		gp.iTile[i] = new IT_DryTree(gp,27,24);i++;
+		gp.iTile[i] = new IT_DryTree(gp,17,35);i++;
+		gp.iTile[i] = new IT_DryTree(gp,17,36);i++;
+		gp.iTile[i] = new IT_DryTree(gp,40,34);i++;
+		gp.iTile[i] = new IT_DryTree(gp,40,35);i++;
+		gp.iTile[i] = new IT_DryTree(gp,36,40);i++;
 	}
 	
 }

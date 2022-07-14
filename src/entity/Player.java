@@ -33,6 +33,8 @@ public class Player extends Entity{
 	public boolean attackCanceled = false;
 	public ArrayList<Entity> inventory = new ArrayList<>();
 	public final int maxInventorySize = 20;
+	public final int mphealth = 16;
+	public final int mpmana = 10;
 	public int ptype = 0;
 	/**
 	 * Setter for initial values of player character
@@ -71,7 +73,7 @@ public class Player extends Entity{
 	public void setDefaultValues() {
 		
 		worldX = gp.tileSize * 30;
-		worldY = gp.tileSize * 20;
+		worldY = gp.tileSize * 21;
 		speed = 4;		
 		direction = "down";
 		
@@ -131,7 +133,7 @@ public class Player extends Entity{
 			mana = maxMana;
 			ammo = 10;
 			strength = 1;
-			dexterity = 3;
+			dexterity = 2;
 			exp = 0;
 			nextLevelExp = 10;
 			coin =0;
@@ -150,11 +152,11 @@ public class Player extends Entity{
 			level = 1;
 			maxLife = 6;
 			life = maxLife;
-			maxMana = 10;
+			maxMana = 6;
 			mana = maxMana;
 			ammo = 100;
 			strength = 0;
-			dexterity = 2;
+			dexterity = 1;
 			exp = 0;
 			nextLevelExp = 10;
 			coin =0;
@@ -171,7 +173,7 @@ public class Player extends Entity{
 	 * setter for default location of player character
 	 */
 	public void setDefaultPositions() {
-		worldX = gp.tileSize * 23;
+		worldX = gp.tileSize * 30;
 		worldY = gp.tileSize * 21;
 		direction = "down";
 	}
@@ -679,29 +681,34 @@ public class Player extends Entity{
 		if(exp >= nextLevelExp) {
 			level++;
 			nextLevelExp = nextLevelExp + (10*level);
-			for (int i = 0; i<gp.monster.length;i++) {
-				gp.monster[i].attack += 1;
-			}
+			
 			if(ptype == 0) {
-				maxLife +=2;
+				if (maxLife<mphealth) {
+					maxLife +=2;
+				}
 				strength++;
-				dexterity++;
 				life = maxLife;
 				attack = getAttack();
 				defense = getDefense();
 			}
 			if(ptype == 1) {
-				maxLife +=2;
+				if (maxLife<mphealth) {
+					maxLife +=2;
+				}
 				strength++;
-				dexterity++;
 				life = maxLife;
 				attack = getAttack();
 				defense = getDefense();	
 			}
 			if(ptype == 2) {
-				maxLife +=2;
-				dexterity++;
+				if (maxLife<mphealth) {
+					maxLife +=2;
+				}
 				life = maxLife;
+				if (maxMana<mpmana) {
+					maxMana +=1;
+				}
+				mana = maxMana;
 				projectile.attack += 1;
 				defense = getDefense();
 			}

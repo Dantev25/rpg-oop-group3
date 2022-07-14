@@ -30,8 +30,8 @@ public class MON_Mage extends Entity{
 		maxLife = 12;
 		life = maxLife;
 		attack = 8;
-		defense = 0;
-		exp = 10;
+		defense = 1;
+		exp = 15;
 		projectile = new OBJ_Fireball(gp);
 		projectile.attack = 10;
 		solidArea.x = 8;
@@ -48,8 +48,8 @@ public class MON_Mage extends Entity{
 	 */
 	public void getImage() {
 		
-		up1 = setup("/monster/mage_down_1", gp.tileSize, gp.tileSize);
-		up2 = setup("/monster/mage_down_2", gp.tileSize, gp.tileSize);
+		up1 = setup("/monster/mage_up_1", gp.tileSize, gp.tileSize);
+		up2 = setup("/monster/mage_up_2", gp.tileSize, gp.tileSize);
 		down1 = setup("/monster/mage_down_1", gp.tileSize, gp.tileSize);
 		down2 = setup("/monster/mage_down_2", gp.tileSize, gp.tileSize);
 		right1 = setup("/monster/mage_right_1", gp.tileSize, gp.tileSize);

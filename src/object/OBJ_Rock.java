@@ -25,7 +25,7 @@ public class OBJ_Rock extends Projectile{
 		
 		name = "Rock";
 		speed = 8;
-		maxLife = 80;
+		maxLife = 30;
 		life = maxLife;
 		attack = 6;
 		useCost = 1;
