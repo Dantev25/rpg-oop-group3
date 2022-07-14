@@ -7,7 +7,7 @@
 
 # Object-Oriented Programming RPG Project
 
-Group 3
+# Group 3
 
 ### Table of Contents
 
@@ -19,12 +19,12 @@ Group 3
  
 ## Project Description
 
-We are to develop an RPG Fight game which includes different characters and monsters. 
+We are to develop an RPG Fight game which includes different player characters and monsters. 
 
 
 ## Game Instructions
 ### How to Play
-The game can be played using the arrow keys for moving the player and the enter key to attack the monsters, to talk to the old man and to cut dry trees.
+The game can be played using the arrow keys for moving the player and the enter key to perform actions.
 
 A - move left
 
@@ -36,7 +36,17 @@ D - move right
 
 C - check character status and use inventory
 
-ENTER - attack, talk, cut dry trees
+F - shoot projectile (for warrior and mage only)
+
+P - pause/resume game
+
+T - telemetry
+
+ENTER - attack monsters, talk to the old man and cut dry trees
+
+ESCAPE - enter options menu
+
+
 
 ## Game Development and Design
 
