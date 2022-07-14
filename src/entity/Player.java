@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 import main.GamePanel;
 import main.KeyHandler;
-import monster.MON_GreenSlime;
-import object.OBJ_Axe;
 import object.OBJ_Fireball;
 import object.OBJ_Key;
 import object.OBJ_NoWep;
