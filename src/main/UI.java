@@ -130,7 +130,7 @@ public class UI {
 			
 			// TITLE NAME
 			g2.setFont(g2.getFont().deriveFont(Font.PLAIN,96F));
-			String text =  "RPG Group 1";
+			String text =  "RPG Group 3";
 			int x = getXforCenteredText(text);
 			int y = gp.tileSize*3;
 			
