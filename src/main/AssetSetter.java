@@ -13,7 +13,6 @@ import object.OBJ_ManaCrystal;
 import object.OBJ_Potion_Red;
 import object.OBJ_Shield_Blue;
 import tile_interactive.IT_DryTree;
-import tile_interactive.IT_Trunk;
 
 /**
  * This class implements the objects: bronze coins, axe, blue shield, heart, mana crystal, 
